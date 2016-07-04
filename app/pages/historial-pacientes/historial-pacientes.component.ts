@@ -22,8 +22,8 @@ export class HistorialPacientesComponent {
         )
     }
 
-    irHistorialPaciente(idOdontologo:number, idPaciente:number) {
-        let link = ['HistorialPaciente', { idOdontologo: idOdontologo, idPaciente: idPaciente}];
+    irHistorialPaciente(idPaciente:number) {
+        let link = ['Historial', {idOdontologo: this.routeParams.get('idOdontologo'), idPaciente: idPaciente}];
         this.router.navigate(link);
     }
 }

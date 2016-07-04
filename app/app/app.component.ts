@@ -16,7 +16,7 @@ import {HeaderComponent} from '../pages/header/header.component';
 })
 
 @RouteConfig([
-    { path: '/historial/odontologo', name: 'HistorialOndontologos', component: HistorialOdontologosComponent, useAsDefault: true },
+    { path: '/historial/odontologo', name: 'HistorialOdontologos', component: HistorialOdontologosComponent, useAsDefault: true },
     { path: '/historial/odontologo/:idOdontologo', name: 'HistorialPacientes', component: HistorialPacientesComponent },
     { path: '/historial/odontologo/:idOdontologo/paciente/:idPaciente', name: 'Historial', component: HistorialComponent },
 ])

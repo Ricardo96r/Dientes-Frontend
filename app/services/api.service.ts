@@ -66,8 +66,17 @@ export class ApiService {
      *
      *  return json
      */
-    getOdontologoPaciente(idOdontologo:number) {
+    getOdontologoPaciente(idOdontologo:any) {
         return this.getHttp("odontologos/" + idOdontologo);
+    }
+
+    /*
+     *  Obtiene todos los pacientes de un odontologo
+     *
+     *  return json
+     */
+    getHistorial(idPaciente:any) {
+        return this.getHttp("historial/" + idPaciente);
     }
 
     /*
