@@ -16,9 +16,9 @@
           <!--No funciona el boton ni la seleccion. Creo que no esta jalando datos
           por algun motivo. ARREGLAR -->
           <div class="form-group">
-            <label for="inputFechaNac" class="col-sm-4 control-label">Fecha de nacimiento</label>
+            <label for="inputFechaNac" class="col-sm-6 control-label">Fecha de nacimiento</label>
 
-              <div class="container col-sm-10">
+              <div class="container col-sm-6">
                           <div class='input-group date' id='datetimepicker10'>
                               <input type='text' class="form-control" />
                               <span class="input-group-addon">
@@ -39,57 +39,79 @@
             <!-- /Seleccionador de fecha -->
             <!-- Escritura de cedula-->
             <div class="form-group">
-              <label for="inputCedula" class="col-sm-2 control-label">Cedula</label>
-              <div class="col-sm-10">
+              <label for="inputCedula" class="col-sm-6 control-label">Cedula</label>
+              <div class="col-sm-6">
                 <input type="text" class="form-control" id="inputCedula" placeholder="12345678">
               </div>
             </div>
             <!-- /Escritura de cedula-->
             <!-- Escritura del nombre-->
             <div class="form-group">
-              <label for="inputNombre" class="col-sm-2 control-label">Nombre</label>
-              <div class="col-sm-10">
+              <label for="inputNombre" class="col-sm-6 control-label">Nombre</label>
+              <div class="col-sm-6">
                 <input type="text" class="form-control" id="inputNombre" placeholder="Pedro Perez">
               </div>
             </div>
           <!-- /Escritura de nombre-->
           <!-- Escritura del ocupacion-->
           <div class="form-group">
-            <label for="inputOcupacion" class="col-sm-2 control-label">Ocupacion</label>
-            <div class="col-sm-10">
+            <label for="inputOcupacion" class="col-sm-6 control-label">Ocupacion</label>
+            <div class="col-sm-6">
               <input type="text" class="form-control" id="inputOcupacion" placeholder="Profesor">
             </div>
           </div>
-          <!-- /Escritura de ocupacion-->
-          <!-- Escritura del ocupacion-->
-          <div class="form-group">
-            <label for="inputTelefono" class="col-sm-2 control-label">Telefono</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="inputOcupacion" placeholder="Pedro Perez">
-            </div>
-          </div>
-          <!-- /Escritura de ocupacion-->
-          <!-- Escritura del ocupacion-->
+          <!-- /Escritura de ocupacion -->
+          <!-- Telefono -->
+          <!-- ARREGLAR No funciona el dropdown para las selecciones -->
             <div class="form-group">
-              <label for="inputOcupacion" class="col-sm-4 control-label">Telefono de emergencia</label>
-              <div class="col-sm-8">
-                <input type="text" class="form-control" id="inputOcupacion" placeholder="Pedro Perez">
-              </div>
+              <label for="inputOcupacion" class="col-sm-6 control-label">Telefono</label>
+              <div class="col-lg-6">
+                 <div class="input-group">
+                   <div class="input-group-btn">
+                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Prefijo <span class="caret"></span></button>
+                     <ul class="dropdown-menu">
+                       <li><a href="#">0412</a></li>
+                       <li><a href="#">0414</a></li>
+                       <li><a href="#">0416</a></li>
+                     </ul>
+                   </div><!-- /btn-group -->
+                   <input type="text" class="form-control" aria-label="..." placeholder="1234567">
+                 </div><!-- /input-group -->
+               </div><!-- /.col-lg-6 -->
             </div>
-          <!-- /Escritura de ocupacion-->
-          <!-- Escritura del ocupacion-->
+          <!-- /Telefono -->
+          <!-- Telefono de emergencia -->
+          <!-- ARREGLAR No funciona el dropdown para las selecciones -->
             <div class="form-group">
-              <label for="inputGenero" class="col-sm-2 control-label">Genero</label>
-              <div class="col-sm-10">
+              <label for="inputOcupacion" class="col-sm-6 control-label">Telefono de emergencia</label>
+              <div class="col-lg-6">
+                 <div class="input-group">
+                   <div class="input-group-btn">
+                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Prefijo <span class="caret"></span></button>
+                     <ul class="dropdown-menu">
+                       <li><a href="#">0412</a></li>
+                       <li><a href="#">0414</a></li>
+                       <li><a href="#">0416</a></li>
+                     </ul>
+                   </div><!-- /btn-group -->
+                   <input type="text" class="form-control" aria-label="..." placeholder="1234567">
+                 </div><!-- /input-group -->
+               </div><!-- /.col-lg-6 -->
+            </div>
+          <!-- /Telefono de emergencia -->
+          <!-- Genero -->
+            <div class="form-group">
+              <label for="inputGenero" class="col-sm-6 control-label">Genero</label>
+              <div class="col-sm-6">
                 <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions" id="radioGenero1" value="femenino"> Femenino
+                  <input type="radio" name="radioGenero" id="radioGenero1" value="femenino"> Femenino
                 </label>
                 <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions" id="radioGenero2" value="masculino"> Masculino
+                  <input type="radio" name="radioGenero" id="radioGenero2" value="masculino"> Masculino
                 </label>
               </div>
             </div>
-          <!-- /Escritura de ocupacion-->
+          <!-- /Genero -->
         </form>
         <!-- Historial clinico-->
         <h1>Historial clínico</h1>
@@ -103,19 +125,24 @@
               </script></p>
             <!-- /Fecha de creacion -->
             <!-- Ultima visita al odontologo -->
-            <!-- Esto va ligado al paciente seleccionado, no?-->
-            <p><strong>Ultima visita al odontologo:</strong> {{historial.ultima_visita_al_odontologo}}</p>
+            <!-- ARREGLAR no se como implementarlo, puede ser como Fecha de Nacimiento
+            si lo logro hacer funcionar, o que se venga automatico segun el paciente.
+            Esto va ligado al paciente seleccionado, no?-->
+            <label for="inputAprietaD" class="col-sm-6  control-label">Ultima visita al odontologo</label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" id="inputNombre" placeholder="Fecha">
+            </div>
             <!-- /Ultima visita al odontologo -->
             <!-- Aprieta los dientes -->
             <div class="form-group">
               <!-- ARREGLAR alinacion del label-->
-              <label for="inputAprietaD" class="col-sm-4  control-label">Aprieta los dientes</label>
-              <div class="col-sm-8">
+              <label for="inputAprietaD" class="col-sm-6  control-label">Aprieta los dientes</label>
+              <div class="col-sm-6">
                 <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions" id="radioAprietaSi" value="true"> Si
+                  <input type="radio" name="radioAprieta" id="radioAprietaSi" value="true"> Si
                 </label>
                 <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions" id="radioAprietaNo" value="false"> No
+                  <input type="radio" name="radioAprieta" id="radioAprietaNo" value="false"> No
                 </label>
               </div>
             </div>
@@ -123,13 +150,13 @@
             <!-- Dolor de dientes -->
             <div class="form-group">
               <!-- ARREGLAR alinacion del label-->
-              <label for="inputDolorD" class="col-sm-4  control-label">Dolor de dientes</label>
-              <div class="col-sm-8">
+              <label for="inputDolorD" class="col-sm-6  control-label">Dolor de dientes</label>
+              <div class="col-sm-6">
                 <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions" id="radioDolorSi" value="true"> Si
+                  <input type="radio" name="radioDolor" id="radioDolorSi" value="true"> Si
                 </label>
                 <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions" id="radioDolorNo" value="false"> No
+                  <input type="radio" name="radioDolor" id="radioDolorNo" value="false"> No
                 </label>
               </div>
             </div>
@@ -140,13 +167,13 @@
             <!-- Sangrado de encias -->
             <div class="form-group">
               <!-- ARREGLAR alinacion del label-->
-              <label for="inputSangrado" class="col-sm-4  control-label">Sangrado de encias</label>
-              <div class="col-sm-8">
+              <label for="inputSangrado" class="col-sm-6  control-label">Sangrado de encias</label>
+              <div class="col-sm-6">
                 <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions" id="radioSangradoSi" value="true"> Si
+                  <input type="radio" name="radioSangrado" id="radioSangradoSi" value="true"> Si
                 </label>
                 <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions" id="radioSangradoNo" value="false"> No
+                  <input type="radio" name="radioSangrado" id="radioSangradoNo" value="false"> No
                 </label>
               </div>
             </div>
@@ -157,13 +184,13 @@
             <!-- Ruido al mover la mandibula -->
             <div class="form-group">
               <!-- ARREGLAR alinacion del label-->
-              <label for="inputRuido" class="col-sm-4  control-label">Ruido al mover la mandibula</label>
-              <div class="col-sm-8">
+              <label for="inputRuido" class="col-sm-6  control-label">Ruido al mover la mandibula</label>
+              <div class="col-sm-6">
                 <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions" id="radioRuidoSi" value="true"> Si
+                  <input type="radio" name="radioRuido" id="radioRuidoSi" value="true"> Si
                 </label>
                 <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions" id="radioRuidoNo" value="false"> No
+                  <input type="radio" name="radioRuido" id="radioRuidoNo" value="false"> No
                 </label>
               </div>
             </div>
@@ -174,13 +201,13 @@
             <!-- Fuma -->
             <div class="form-group">
               <!-- ARREGLAR alinacion del label-->
-              <label for="inputFuma" class="col-sm-4  control-label">Fuma</label>
-              <div class="col-sm-8">
+              <label for="inputFuma" class="col-sm-6  control-label">Fuma</label>
+              <div class="col-sm-6">
                 <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions" id="radioFumaSi" value="true"> Si
+                  <input type="radio" name="radioFuma" id="radioFumaSi" value="true"> Si
                 </label>
                 <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions" id="radioFumaNo" value="false"> No
+                  <input type="radio" name="radioFuma" id="radioFumaNo" value="false"> No
                 </label>
               </div>
             </div>
@@ -191,13 +218,13 @@
             <!-- Muerde objetos extranos -->
             <div class="form-group">
               <!-- ARREGLAR alinacion del label-->
-              <label for="inputMuerdeO" class="col-sm-4  control-label">Muerde objetos extranos</label>
-              <div class="col-sm-8">
+              <label for="inputMuerdeO" class="col-sm-6  control-label">Muerde objetos extranos</label>
+              <div class="col-sm-6">
                 <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions" id="radioMuerdeOSi" value="true"> Si
+                  <input type="radio" name="radioMuerdeO" id="radioMuerdeOSi" value="true"> Si
                 </label>
                 <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions" id="radioMuerdeONo" value="false"> No
+                  <input type="radio" name="radioMuerdeO" id="radioMuerdeONo" value="false"> No
                 </label>
               </div>
             </div>
@@ -205,13 +232,13 @@
             <!-- Muerde unas -->
             <div class="form-group">
               <!-- ARREGLAR alinacion del label-->
-              <label for="inputMuerdeU" class="col-sm-4  control-label">Muerde las unas</label>
-              <div class="col-sm-8">
+              <label for="inputMuerdeU" class="col-sm-6  control-label">Muerde las unas</label>
+              <div class="col-sm-6">
                 <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions" id="radioMuerdeUSi" value="true"> Si
+                  <input type="radio" name="radioMuerdeU" id="radioMuerdeUSi" value="true"> Si
                 </label>
                 <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions" id="radioMuerdeUNo" value="false"> No
+                  <input type="radio" name="radioMuerdeU" id="radioMuerdeUNo" value="false"> No
                 </label>
               </div>
             </div>
@@ -219,13 +246,13 @@
             <!-- Experiencia dental negativa -->
             <div class="form-group">
               <!-- ARREGLAR alinacion del label-->
-              <label for="inputExperiencia" class="col-sm-4  control-label">Experiencia dental negativa</label>
-              <div class="col-sm-8">
+              <label for="inputExperiencia" class="col-sm-6  control-label">Experiencia dental negativa</label>
+              <div class="col-sm-6">
                 <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions" id="radioExperienciaSi" value="true"> Si
+                  <input type="radio" name="radioExperiencia" id="radioExperienciaSi" value="true"> Si
                 </label>
                 <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions" id="radioExperienciaNo" value="false"> No
+                  <input type="radio" name="radioExperiencia" id="radioExperienciaNo" value="false"> No
                 </label>
               </div>
             </div>
@@ -233,13 +260,13 @@
             <!-- Instruido en el cepillado -->
             <div class="form-group">
               <!-- ARREGLAR alinacion del label-->
-              <label for="inputInstruido" class="col-sm-4  control-label">Instruido en el cepillado</label>
-              <div class="col-sm-8">
+              <label for="inputInstruido" class="col-sm-6  control-label">Instruido en el cepillado</label>
+              <div class="col-sm-6">
                 <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions" id="radioInstruidoSi" value="true"> Si
+                  <input type="radio" name="radioInstruido" id="radioInstruidoSi" value="true"> Si
                 </label>
                 <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions" id="radioInstruidoNo" value="false"> No
+                  <input type="radio" name="radioInstruido" id="radioInstruidoNo" value="false"> No
                 </label>
               </div>
             </div>
@@ -247,13 +274,13 @@
             <!-- Embarazada -->
             <div class="form-group">
               <!-- ARREGLAR alinacion del label-->
-              <label for="inputEmbarazada" class="col-sm-4  control-label">Embarazada</label>
-              <div class="col-sm-8">
+              <label for="inputEmbarazada" class="col-sm-6  control-label">Embarazada</label>
+              <div class="col-sm-6">
                 <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions" id="radioEmbarazadaSi" value="true"> Si
+                  <input type="radio" name="radioEmbarazada" id="radioEmbarazadaSi" value="true"> Si
                 </label>
                 <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions" id="radioEmbarazadaNo" value="false"> No
+                  <input type="radio" name="radioEmbarazada" id="radioEmbarazadaNo" value="false"> No
                 </label>
               </div>
             </div>
@@ -261,13 +288,13 @@
             <!-- Ciclo menstrual regular -->
             <div class="form-group">
               <!-- ARREGLAR alinacion del label-->
-              <label for="inputCiclo" class="col-sm-4  control-label">Ciclo menstrual regular</label>
-              <div class="col-sm-8">
+              <label for="inputCiclo" class="col-sm-6  control-label">Ciclo menstrual regular</label>
+              <div class="col-sm-6">
                 <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions" id="radioCicloSi" value="true"> Si
+                  <input type="radio" name="radioCiclo" id="radioCicloSi" value="true"> Si
                 </label>
                 <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions" id="radioCicloNo" value="false"> No
+                  <input type="radio" name="radioCiclo" id="radioCicloNo" value="false"> No
                 </label>
               </div>
             </div>
@@ -275,20 +302,23 @@
             <!-- Toma anticonceptivos -->
             <div class="form-group">
               <!-- ARREGLAR alinacion del label-->
-              <label for="inputAnticoncep" class="col-sm-4  control-label">Toma anticonceptivos</label>
-              <div class="col-sm-8">
+              <label for="inputAnticoncep" class="col-sm-6  control-label">Toma anticonceptivos</label>
+              <div class="col-sm-6">
                 <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions" id="radioAnticoncepSi" value="true"> Si
+                  <input type="radio" name="radioAnticoncep" id="radioAnticoncepSi" value="true"> Si
                 </label>
                 <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions" id="radioAnticoncepNo" value="false"> No
+                  <input type="radio" name="radioAnticoncep" id="radioAnticoncepNo" value="false"> No
                 </label>
               </div>
             </div>
             <!-- /Toma anticonceptivos -->
           </form>
         <!-- /Historial clinico -->
+
         <p><strong>Alergias</strong></p>
+        <!-- ARREGLAR hay que incluir aqui unos multiselect pero no se instalarlo
+      con esto de Angular2 y no quiero danar nada-->
             <div *ngIf="alergias.length == 0" class="alert alert-warning" role="alert">No posee alergias</div>
             <ul>
                 <li *ngFor="let alergia of alergias">{{alergia.nombre}}</li>
