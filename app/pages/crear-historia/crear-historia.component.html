@@ -8,39 +8,22 @@
     </div>
 
     <div class="row">
-        <div class="col-md-6">
-        <h1>Datos del paciente</h1>
-
+        <div class="col-md-12">
+        <h1><center>Datos del paciente</center></h1>
+        <hr/>
         <form class="form-horizontal">
           <!-- Seleccionador de fecha -->
-          <!--No funciona el boton ni la seleccion. Creo que no esta jalando datos
-          por algun motivo. ARREGLAR -->
           <div class="form-group">
             <label for="inputFechaNac" class="col-sm-6 control-label">Fecha de nacimiento</label>
-
-              <div class="container col-sm-6">
-                          <div class='input-group date' id='datetimepicker10'>
-                              <input type='text' class="form-control" />
-                              <span class="input-group-addon">
-                                  <span class="glyphicon glyphicon-calendar">
-                                  </span>
-                              </span>
-                          </div>
-                        </div>
-                  <script type="text/javascript">
-                      $(function () {
-                          $('#datetimepicker10').datetimepicker({
-                              viewMode: 'years',
-                              format: 'MM/YYYY'
-                          });
-                      });
-                  </script>
+            <div class="container col-sm-6">
+              <input type="date" name="birthday">
             </div>
+          </div>
             <!-- /Seleccionador de fecha -->
             <!-- Escritura de cedula-->
             <div class="form-group">
               <label for="inputCedula" class="col-sm-6 control-label">Cedula</label>
-              <div class="col-sm-6">
+              <div class="col-sm-4">
                 <input type="text" class="form-control" id="inputCedula" placeholder="12345678">
               </div>
             </div>
@@ -48,7 +31,7 @@
             <!-- Escritura del nombre-->
             <div class="form-group">
               <label for="inputNombre" class="col-sm-6 control-label">Nombre</label>
-              <div class="col-sm-6">
+              <div class="col-sm-4">
                 <input type="text" class="form-control" id="inputNombre" placeholder="Pedro Perez">
               </div>
             </div>
@@ -56,45 +39,27 @@
           <!-- Escritura del ocupacion-->
           <div class="form-group">
             <label for="inputOcupacion" class="col-sm-6 control-label">Ocupacion</label>
-            <div class="col-sm-6">
+            <div class="col-sm-4">
               <input type="text" class="form-control" id="inputOcupacion" placeholder="Profesor">
             </div>
           </div>
           <!-- /Escritura de ocupacion -->
           <!-- Telefono -->
-          <!-- ARREGLAR No funciona el dropdown para las selecciones -->
             <div class="form-group">
               <label for="inputOcupacion" class="col-sm-6 control-label">Telefono</label>
               <div class="col-lg-6">
                  <div class="input-group">
-                   <div class="input-group-btn">
-                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Prefijo <span class="caret"></span></button>
-                     <ul class="dropdown-menu">
-                       <li><a href="#">0412</a></li>
-                       <li><a href="#">0414</a></li>
-                       <li><a href="#">0416</a></li>
-                     </ul>
-                   </div><!-- /btn-group -->
                    <input type="text" class="form-control" aria-label="..." placeholder="1234567">
                  </div><!-- /input-group -->
                </div><!-- /.col-lg-6 -->
             </div>
           <!-- /Telefono -->
           <!-- Telefono de emergencia -->
-          <!-- ARREGLAR No funciona el dropdown para las selecciones -->
             <div class="form-group">
               <label for="inputOcupacion" class="col-sm-6 control-label">Telefono de emergencia</label>
               <div class="col-lg-6">
                  <div class="input-group">
-                   <div class="input-group-btn">
-                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Prefijo <span class="caret"></span></button>
-                     <ul class="dropdown-menu">
-                       <li><a href="#">0412</a></li>
-                       <li><a href="#">0414</a></li>
-                       <li><a href="#">0416</a></li>
-                     </ul>
-                   </div><!-- /btn-group -->
-                   <input type="text" class="form-control" aria-label="..." placeholder="1234567">
+                   <input type="tel" class="form-control" aria-label="..." placeholder="1234567">
                  </div><!-- /input-group -->
                </div><!-- /.col-lg-6 -->
             </div>
@@ -112,10 +77,16 @@
               </div>
             </div>
           <!-- /Genero -->
+          <hr />
         </form>
+      </div>
+
         <!-- Historial clinico-->
-        <h1>Historial clínico</h1>
-          <form class="form-horizontal">
+
+        <h1><center>Historial clínico</center></h1>
+        <hr />
+        <div class="row">
+          <form class="form-horizontal"><div class="col-sm-6">
             <!-- Fecha de creacion -->
             <p><strong>Fecha de creacion:</strong>
               <!-- Esto da la fecha actual -->
@@ -125,17 +96,17 @@
               </script></p>
             <!-- /Fecha de creacion -->
             <!-- Ultima visita al odontologo -->
-            <!-- ARREGLAR no se como implementarlo, puede ser como Fecha de Nacimiento
-            si lo logro hacer funcionar, o que se venga automatico segun el paciente.
+            <!-- ARREGLAR
             Esto va ligado al paciente seleccionado, no?-->
-            <label for="inputAprietaD" class="col-sm-6  control-label">Ultima visita al odontologo</label>
-            <div class="col-sm-6">
-              <input type="text" class="form-control" id="inputNombre" placeholder="Fecha">
+            <div class="form-group">
+              <label for="inputAprietaD" class="col-sm-6 control-label">Ultima visita al odontologo</label>
+              <div class="col-sm-6">
+                <input type="date">
+              </div>
             </div>
             <!-- /Ultima visita al odontologo -->
             <!-- Aprieta los dientes -->
             <div class="form-group">
-              <!-- ARREGLAR alinacion del label-->
               <label for="inputAprietaD" class="col-sm-6  control-label">Aprieta los dientes</label>
               <div class="col-sm-6">
                 <label class="radio-inline">
@@ -149,7 +120,6 @@
             <!-- /Aprieta los dientes -->
             <!-- Dolor de dientes -->
             <div class="form-group">
-              <!-- ARREGLAR alinacion del label-->
               <label for="inputDolorD" class="col-sm-6  control-label">Dolor de dientes</label>
               <div class="col-sm-6">
                 <label class="radio-inline">
@@ -162,11 +132,15 @@
             </div>
             <!-- /Dolor de dientes -->
             <!-- Observaciones sobre el dolor -->
-            <!-- ARREGLAR agregar input para observaciones sobre el dolor -->
+            <div class="form-group">
+              <label for="inputDolorObs" class="col-sm-6 control-label">Observaciones</label>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" id="inputDolorObs" placeholder="Observaciones">
+              </div>
+            </div>
             <!-- /Observaciones sobre el dolor -->
             <!-- Sangrado de encias -->
             <div class="form-group">
-              <!-- ARREGLAR alinacion del label-->
               <label for="inputSangrado" class="col-sm-6  control-label">Sangrado de encias</label>
               <div class="col-sm-6">
                 <label class="radio-inline">
@@ -179,11 +153,15 @@
             </div>
             <!-- /Sangrado de encias -->
             <!-- Observaciones sobre el sangrado -->
-            <!-- ARREGLAR agregar input para observaciones sobre el sangrado -->
+            <div class="form-group">
+              <label for="inputDolorSang" class="col-sm-6 control-label">Observaciones</label>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" id="inputDolorSang" placeholder="Observaciones">
+              </div>
+            </div>
             <!-- /Observaciones sobre el sangrado -->
             <!-- Ruido al mover la mandibula -->
             <div class="form-group">
-              <!-- ARREGLAR alinacion del label-->
               <label for="inputRuido" class="col-sm-6  control-label">Ruido al mover la mandibula</label>
               <div class="col-sm-6">
                 <label class="radio-inline">
@@ -196,11 +174,15 @@
             </div>
             <!-- /Ruido al mover la mandibula -->
             <!-- Observaciones sobre el ruido al mover la mandibula -->
-            <!-- ARREGLAR agregar input para observaciones sobre el ruido al mover la mandibula -->
+            <div class="form-group">
+              <label for="inputRuido" class="col-sm-6 control-label">Observaciones</label>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" id="inputRuido" placeholder="Observaciones">
+              </div>
+            </div>
             <!-- /Observaciones sobre el ruido al mover la mandibula -->
             <!-- Fuma -->
             <div class="form-group">
-              <!-- ARREGLAR alinacion del label-->
               <label for="inputFuma" class="col-sm-6  control-label">Fuma</label>
               <div class="col-sm-6">
                 <label class="radio-inline">
@@ -213,11 +195,15 @@
             </div>
             <!-- /Fuma -->
             <!-- Cantidad de cigarros diarios -->
-            <!-- ARREGLAR agregar campo numero para cigarros diarios -->
+            <div class="form-group">
+              <label for="inputCantidad" class="col-sm-6 control-label">Cantidad de cigarros diarios</label>
+              <div class="col-sm-3">
+                <input type="number" class="form-control" id="inputCantidad" placeholder="Cantidad">
+              </div>
+            </div>
             <!-- /Cantidad de cigarros diarios -->
             <!-- Muerde objetos extranos -->
             <div class="form-group">
-              <!-- ARREGLAR alinacion del label-->
               <label for="inputMuerdeO" class="col-sm-6  control-label">Muerde objetos extranos</label>
               <div class="col-sm-6">
                 <label class="radio-inline">
@@ -231,7 +217,6 @@
             <!-- /Muerde objetos extranos -->
             <!-- Muerde unas -->
             <div class="form-group">
-              <!-- ARREGLAR alinacion del label-->
               <label for="inputMuerdeU" class="col-sm-6  control-label">Muerde las unas</label>
               <div class="col-sm-6">
                 <label class="radio-inline">
@@ -245,7 +230,7 @@
             <!-- /Muerde unas -->
             <!-- Experiencia dental negativa -->
             <div class="form-group">
-              <!-- ARREGLAR alinacion del label-->
+
               <label for="inputExperiencia" class="col-sm-6  control-label">Experiencia dental negativa</label>
               <div class="col-sm-6">
                 <label class="radio-inline">
@@ -259,7 +244,7 @@
             <!-- /Experiencia dental negativa -->
             <!-- Instruido en el cepillado -->
             <div class="form-group">
-              <!-- ARREGLAR alinacion del label-->
+
               <label for="inputInstruido" class="col-sm-6  control-label">Instruido en el cepillado</label>
               <div class="col-sm-6">
                 <label class="radio-inline">
@@ -273,7 +258,7 @@
             <!-- /Instruido en el cepillado -->
             <!-- Embarazada -->
             <div class="form-group">
-              <!-- ARREGLAR alinacion del label-->
+
               <label for="inputEmbarazada" class="col-sm-6  control-label">Embarazada</label>
               <div class="col-sm-6">
                 <label class="radio-inline">
@@ -287,7 +272,7 @@
             <!-- /Embarazada -->
             <!-- Ciclo menstrual regular -->
             <div class="form-group">
-              <!-- ARREGLAR alinacion del label-->
+
               <label for="inputCiclo" class="col-sm-6  control-label">Ciclo menstrual regular</label>
               <div class="col-sm-6">
                 <label class="radio-inline">
@@ -301,7 +286,7 @@
             <!-- /Ciclo menstrual regular -->
             <!-- Toma anticonceptivos -->
             <div class="form-group">
-              <!-- ARREGLAR alinacion del label-->
+
               <label for="inputAnticoncep" class="col-sm-6  control-label">Toma anticonceptivos</label>
               <div class="col-sm-6">
                 <label class="radio-inline">
@@ -313,9 +298,10 @@
               </div>
             </div>
             <!-- /Toma anticonceptivos -->
-          </form>
+          </form></div>
         <!-- /Historial clinico -->
 
+      <div class="col-md-6">
         <p><strong>Alergias</strong></p>
         <!-- ARREGLAR hay que incluir aqui unos multiselect pero no se instalarlo
       con esto de Angular2 y no quiero danar nada-->
@@ -345,39 +331,6 @@
                         <li>Observación: {{diente.observacion}}</li>
                     </ul></li></ul>
             </span>
-
     </div>
-    <div class="col-md-6">
-        <h1>Consultas <small>(Solo del doctor)</small></h1>
-        <div *ngIf="consultasPorOdontologo.length == 0" class="alert alert-warning" role="alert">No posee consultas con el doctor</div>
-        <ul>
-            <span *ngFor="let consulta of consultasPorOdontologo; let i=index">
-                <h3>Consulta {{i+1}}</h3>
-                <li><strong>Observaciones:</strong> {{consulta.observaciones}}</li>
-                <li><strong>Fecha de consulta:</strong> {{consulta.fecha}}</li>
-                <li><strong>Odontologo:</strong> {{consulta.odontologo}}
-                <li *ngIf="consulta.id_tratamiento != null"><strong>Tratamiento</strong><ul>
-                    <li><strong>Nombre:</strong>{{consulta.nombre}}</li>
-                    <li><strong>Detalles</strong>{{consulta.detalles}}</li>
-                    <li><strong>Costo</strong>{{consulta.costo}}</li>
-                </ul></li>
-            </span>
-        </ul>
-        <h1>Consultas <small>(Todos los doctores)</small></h1>
-        <div *ngIf="consultas.length == 0" class="alert alert-warning" role="alert">No ha tenido consultas el paciente</div>
-        <ul>
-            <span *ngFor="let consulta of consultas; let i=index">
-                <h3>Consulta {{i+1}}</h3>
-                <li><strong>Observaciones:</strong> {{consulta.observaciones}}</li>
-                <li><strong>Fecha de consulta:</strong> {{consulta.fecha}}</li>
-                <li><strong>Odontologo:</strong> {{consulta.odontologo}}
-                <li *ngIf="consulta.id_tratamiento != null"><strong>Tratamiento</strong><ul>
-                    <li><strong>Nombre:</strong>{{consulta.nombre}}</li>
-                    <li><strong>Detalles</strong>{{consulta.detalles}}</li>
-                    <li><strong>Costo</strong>{{consulta.costo}}</li>
-                </ul></li>
-            </span>
-        </ul>
-    </div>
-</div>
+  </div>
 </div>
