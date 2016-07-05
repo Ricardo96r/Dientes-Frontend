@@ -1,0 +1,94 @@
+<div class="container">
+  <!-- Titulo -->
+  <div class="row">
+      <div class="col-md-12">
+          <div class="page-header">
+              <h1>Facturacion</h1>
+          </div>
+      </div>
+  </div>
+  <!-- /Titulo -->
+  <!-- Primera columna -->
+  <form>
+
+
+  <div class="col-sm-6">
+      <h1><small>Datos de la consulta</small></h1>
+      <hr>
+      <!-- Seleccionador de numero de consulta -->
+      <div class="form-group">
+        <h4 class="text-right">
+          <label for="inputCita" class="col-sm-4 control-label">Numero de cita</label>
+        </h4>
+        <div class="input-group col-sm-6">
+          <span class="input-group-addon">ID Cita Numero</span>
+          <input type="number" class="form-control" id="inputCita">
+        </div>
+      </div>
+      <!-- /Seleccionador de numero de consulta -->
+      <!-- Dropdown de doctores -->
+      <div class="form-group">
+        <label for="dropdownDoctores" class="col-sm-4 control-label text-right">Doctor</label>
+        <div class="dropdown col-sm-6">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownDoctores" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Doctores
+            <span class="caret"></span>
+          </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li><a href="#">Jose R</a></li>
+            <li><a href="#">Meyer M</a></li>
+            <li><a href="#">Ricardo R</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- /Dropdown de doctores -->
+      <!-- Dropdown de tratamientos -->
+      <div class="form-group">
+        <h4 class="text-right">
+          <label for="dropdownDoctores" class="col-sm-4 control-label">Tratamiento</label>
+        </h4>
+        <div class="dropdown col-sm-6">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownDoctores" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Tratamiento
+            <span class="caret"></span>
+          </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li><a href="#">Limpieza</a></li>
+              <li><a href="#">Extraccion</a></li>
+              <li><a href="#">Arreglar</a></li>
+              <li><a href="#">Desarreglar</a></li>
+            </ul>
+          </div>
+      </div>
+      <!-- /Dropdown de doctores -->
+      <!-- Precio del tratamiento -->
+      <div class="form-group">
+        <div class="col-sm-12">
+          <div class="alert alert-info text-center" role="alert">140.000 BsF</div>
+        </div>
+      </div>
+      <!-- /Precio del tratamiento -->
+  </div>
+  </form>
+  <!-- /Primera columna -->
+  <!-- Segunda columna -->
+  <div class="col-sm-6">
+      <h1><small>Datos del cliente</small></h1>
+      <hr>
+      <!-- Seleccion de metodo de pago -->
+      <div class="form-group">
+        <h4 class="text-right">
+          <label for="dropdownDoctores" class="col-sm-6 control-label">Metodo de pago</label>
+        </h4>
+        <div>
+          <div class="list-group col-sm-6">
+            <button type="button" class="list-group-item">VISA</button>
+            <button type="button" class="list-group-item">Mastercard</button>
+            <button type="button" class="list-group-item">American Express</button>
+          </div>
+        </div>
+      </div>
+      <!-- /Seleccion de metodo de pago -->
+  </div>
+  <!-- /Segunda columna -->
+</div>
