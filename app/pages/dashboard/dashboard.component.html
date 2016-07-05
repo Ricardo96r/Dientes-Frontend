@@ -1,0 +1,110 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="page-header">
+                <h1>Reporte gráfico<small> (Cantidad de clientes agrupada por edades)</small></h1>
+            </div>
+        <span *ngIf="mostrarChart">
+        <base-chart class="chart"
+                [data]="pieChartData"
+                [labels]="pieChartLabels"
+                [chartType]="pieChartType"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></base-chart>
+        </span>
+        </div>
+    </div>
+    
+    
+    <div class="row">
+        <div class="col-md-12">
+            <div class="page-header">
+                <h1>Odontólogo que ha generado mayores ingresos por mes</h1>
+            </div>
+            <div class="form-group">
+                <select class="form-control" [(ngModel)]="mesIngresos" (ngModelChange)="getOdontologoTopMesIngresos()">
+                    <option value="1">Enero</option>
+                    <option value="2">Febrero</option>
+                    <option value="3">Marzo</option>
+                    <option value="4">Abril</option>
+                    <option value="5">Mayo</option>
+                    <option value="6">Junio</option>
+                    <option value="7">Julio</option>
+                    <option value="8">Agosto</option>
+                    <option value="9">Septiembre</option>
+                    <option value="10">Octubre</option>
+                    <option value="11">Noviembre</option>
+                    <option value="12">Diciembre</option>
+                </select>
+            </div>
+            <div *ngIf="odontologoTopIngresos.length == 0" class="alert alert-warning" role="alert">Sin resultados</div>
+            <span *ngFor="let odontologo of odontologoTopIngresos; let i=index">
+                <div class="clearfix" *ngIf="(i % 4) == 0"></div>
+                <div class="col-md-3">
+                    <div class="well">
+                        <p><strong>Nombre:</strong> {{odontologo.nombre}}</p>
+                        <p><strong>Cedula:</strong> {{odontologo.cedula}}<p>
+                        <p><strong>Especialidad:</strong> {{odontologo.especialidad}}</p>
+                        <p><strong>Ingresos:</strong> {{odontologo.ingresos}}</p>
+                    </div>
+                </div>
+            </span>
+                
+        </div>
+    </div>
+    
+    
+    <div class="row">
+        <div class="col-md-12">
+            <div class="page-header">
+                <h1>Odontólogo con mas pacientes por mes</h1>
+            </div>
+            <div class="form-group">
+                <select class="form-control" [(ngModel)]="mes" (ngModelChange)="getOdontologoTopMesPacientes()">
+                    <option value="1">Enero</option>
+                    <option value="2">Febrero</option>
+                    <option value="3">Marzo</option>
+                    <option value="4">Abril</option>
+                    <option value="5">Mayo</option>
+                    <option value="6">Junio</option>
+                    <option value="7">Julio</option>
+                    <option value="8">Agosto</option>
+                    <option value="9">Septiembre</option>
+                    <option value="10">Octubre</option>
+                    <option value="11">Noviembre</option>
+                    <option value="12">Diciembre</option>
+                </select>
+            </div>
+            <div *ngIf="odontologoTop.length == 0" class="alert alert-warning" role="alert">Sin resultados</div>
+            <span *ngFor="let odontologo of odontologoTop; let i=index">
+                <div class="clearfix" *ngIf="(i % 4) == 0"></div>
+                <div class="col-md-3">
+                    <div class="well">
+                        <p><strong>Nombre:</strong> {{odontologo.nombre}}</p>
+                        <p><strong>Cedula:</strong> {{odontologo.cedula}}<p>
+                        <p><strong>Especialidad:</strong> {{odontologo.especialidad}}</p>
+                        <p><strong>Clientes:</strong> {{odontologo.clientes}}</p>
+                    </div>
+                </div>
+            </span> 
+        </div>
+    </div>
+    
+    
+    
+    <div class="row">
+        <div class="col-md-12">
+            <div class="page-header">
+                <h1>Tratamiento de cada doctor que genera mayores ganancias</h1>
+            </div>
+            <span *ngFor="let odontologo of odontologos; let i=index">
+                <div class="clearfix" *ngIf="(i % 4) == 0"></div>
+                <div class="col-md-3">
+                    <div class="well" (click)="irGraficoBarras(odontologo.id_odontologo)">
+                        {{ odontologo.nombre }}
+                    </div>
+                </div>
+            </span>
+        </div>
+    </div>
+</div>

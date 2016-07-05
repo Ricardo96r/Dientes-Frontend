@@ -20,6 +20,7 @@
     'rxjs':                       'https://npmcdn.com/rxjs@5.0.0-beta.6',
     'ts':                         'https://npmcdn.com/plugin-typescript@4.0.10/lib/plugin.js',
     'typescript':                 'https://npmcdn.com/typescript@1.9.0-dev.20160409/lib/typescript.js',
+    'ng2-charts': 'node_modules/ng2-charts'
   };
 
   //packages tells the System loader how to load when no filename and/or no extension
@@ -27,6 +28,7 @@
     'app':                        { main: 'main.ts',  defaultExtension: 'ts' },
     'rxjs':                       { defaultExtension: 'js' },
     'angular2-in-memory-web-api': { main: 'index.js', defaultExtension: 'js' },
+    'ng2-charts': { defaultExtension: 'js' }
   };
 
   var ngPackageNames = [

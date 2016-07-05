@@ -1,41 +1,144 @@
 <div class="container">
-<div class="row">
-    <div class="col-md-6">
-        <h1>{{historial.nombre}}</h1>
-        <p><strong>Fecha de creacion:</strong> {{historial.fecha_creacion}}</p>
-        <p><strong>Ultima visita al odontologo:</strong> {{historial.ultima_visita_al_odontologo}}</p>
-        <p><strong>Aprieta los dientes:</strong> {{historial.aprieta_los_dientes}}</p>
-        <p><strong>Dolor de dientes:</strong> {{historial.dolor_de_dientes}}</p>
-        <p><strong>Observaciones de dolor:</strong> {{historial.observacion_dolor}}</p>
-        <p><strong>Sangrado de encias:</strong> {{historial.sangrado_de_encias}}</p>
-        <p><strong>Observacion de sangrado:</strong> {{historial.observacion_sangrado}}</p>
-        <p><strong>Ruido al mover la mandibula:</strong> {{historial.ruido_al_mover_la_mandibula}}</p>
-        <p><strong>Observacion:</strong> {{historial.observacion_ruidos}}</p>
-        <p><strong>Fuma:</strong> {{historial.fuma}}</p>
-        <p><strong>Cigarros diarios:</strong> {{historial.cigaros_diarios}}</p>
-        <p><strong>Muerde objetos extraños:</strong> {{historial.muerde_objetos_extranos}}</p>
-        <p><strong>Muerde las uñas:</strong> {{historial.muerde_las_unas}}</p>
-        <p><strong>Experiencia dental negativa:</strong> {{historial.experiencia_dental_negativa}}</p>
-        <p><strong>Instruido en cepillado:</strong> {{historial.instruido_en_cepillado}}</p>
-        <p><strong>Embarazado:</strong> {{historial.embarazo}}</p>
-        <p><strong>Ciclo menstrual regular:</strong> {{historial.ciclo_menstrual_regular}}</p>
-        <p><strong>Toma anticonceptivos:</strong> {{historial.toma_anticonceptivos}}</p>
-        
-        <h1>Alergias</h1>
-        <ul>
-            <li *ngFor="let alergia of alergias">{{alergia.nombre}}</li>
-        </ul>
-        <h1>Medicamentos</h1>
-        <ul>
-            <li *ngFor="let medicamento of medicamentos">{{medicamento.nombre}}</li>
-        </ul>
-        <h1>Enfermedades</h1>
-        <ul>
-            <li *ngFor="let enfermedad of enfermedades">{{enfermedad.nombre}}</li>
-        </ul>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="page-header">
+                <h1>{{historial.nombre}} <small>historial del paciente</small></h1>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-6">
+        <h1>Datos del paciente</h1>
+            <p><strong>Fecha de nacimiento:</strong> {{paciente.fecha_nacimiento}}</p>
+            <p><strong>Cédula:</strong> {{paciente.cedula}}</p>
+            <p><strong>Ocupación:</strong> {{paciente.ocupacion}}</p>
+            <p><strong>Teléfono: </strong> {{paciente.telefono}}</p>
+            <p><strong>Teléfono de emergencias: </strong> {{paciente.telefono_emergencias}}</p>
+            <p><strong>Género: </strong> {{paciente.genero}}</p>
+            
+        <h1>Historial clínico</h1>
+            <p><strong>Fecha de creacion:</strong> {{historial.fecha_creacion}}</p>
+            <p><strong>Ultima visita al odontologo:</strong> {{historial.ultima_visita_al_odontologo}}</p>
+            <p><strong>Aprieta los dientes:</strong>
+                <span *ngIf="historial.aprieta_los_dientes == 1">Si</span>
+                <span *ngIf="historial.aprieta_los_dientes == 0">No</span>
+            </p>
+            <p><strong>Dolor de dientes:</strong>
+                <span *ngIf="historial.dolor_de_dientes == 1">Si</span>
+                <span *ngIf="historial.dolor_de_dientes == 0">No</span>
+            </p>
+            <p><strong>Observaciones de dolor:</strong>
+                <span *ngIf="historial.observacion_dolor == null">No hay observaciones</span>
+                {{historial.observacion_dolor}}
+            </p>
+            <p><strong>Sangrado de encias:</strong>
+                <span *ngIf="historial.sangrado_de_encias == 1">Si</span>
+                <span *ngIf="historial.sangrado_de_encias == 0">No</span>
+            </p>
+            <p><strong>Observacion de sangrado:</strong>
+            <span *ngIf="historial.observacion_sangrado == null">No hay observaciones</span>
+                {{historial.observacion_sangrado}}
+            </p>
+            <p><strong>Ruido al mover la mandibula:</strong>
+                <span *ngIf="historial.ruido_al_mover_la_mandibula == 1">Si</span>
+                <span *ngIf="historial.ruido_al_mover_la_mandibula == 0">No</span>
+            </p>
+            <p><strong>Observacion:</strong> {{historial.observacion_ruidos}}
+            <span *ngIf="historial.observacion_ruidos == null">No hay observaciones</span>
+                {{historial.observacion_ruidos}}
+            </p>
+            <p><strong>Fuma:</strong>
+                <span *ngIf="historial.fuma == 1">Si</span>
+                <span *ngIf="historial.fuma == 0">No</span>
+            </p>
+            <span *ngIf="historial.fuma == 1">
+                <p><strong>Cigarros diarios:</strong>
+                <span *ngIf="historial.cigaros_diarios == null">No hay información</span>
+                    {{historial.cigaros_diarios}}
+                </p>
+            </span>
+            <p><strong>Muerde objetos extraños:</strong>
+                <span *ngIf="historial.muerde_objetos_extranos == 1">Si</span>
+                <span *ngIf="historial.muerde_objetos_extranos == 0">No</span>
+            </p>
+            <p><strong>Muerde las uñas:</strong>
+                <span *ngIf="historial.muerde_las_unas == 1">Si</span>
+                <span *ngIf="historial.muerde_las_unas == 0">No</span>
+            </p>
+            <p><strong>Experiencia dental negativa:</strong>
+                <span *ngIf="historial.experiencia_dental_negativa == 1">Si</span>
+                <span *ngIf="historial.experiencia_dental_negativa == 0">No</span>
+            </p>
+            <p><strong>Instruido en cepillado:</strong>
+                <span *ngIf="historial.instruido_en_cepillado == 1">Si</span>
+                <span *ngIf="historial.instruido_en_cepillado == 0">No</span>
+            </p>
+            <span *ngIf="paciente.genero == 'Mujer'">
+                <p><strong>Embarazado:</strong>
+                    <span *ngIf="historial.embarazo == 1">Si</span>
+                    <span *ngIf="historial.embarazo == 0">No</span>
+                    <span *ngIf="historial.embarazo == null">No</span>
+                </p>
+                <span *ngIf="(historial.embarazo == 0) || (historial.embarazo == null)">
+                    <p><strong>Ciclo menstrual regular:</strong>
+                        <span *ngIf="historial.ciclo_menstrual_regular == 1">Si</span>
+                        <span *ngIf="(historial.ciclo_menstrual_regular == 0) || (historial.ciclo_menstrual_regular == null) ">No</span>
+                    </p>
+                    <p><strong>Toma anticonceptivos:</strong>
+                        <span *ngIf="historial.toma_anticonceptivos == 1">Si</span>
+                        <span *ngIf="(historial.toma_anticonceptivos == 0) || (historial.toma_anticonceptivos == null) ">No</span>
+                    </p>
+                </span>
+            </span>
+            
+        <p><strong>Alergias</strong></p>
+            <div *ngIf="alergias.length == 0" class="alert alert-warning" role="alert">No posee alergias</div>
+            <ul>
+                <li *ngFor="let alergia of alergias">{{alergia.nombre}}</li>
+            </ul>
+            
+        <p><strong>Medicamentos</strong></p>
+            <div *ngIf="medicamentos.length == 0" class="alert alert-warning" role="alert">No posee medicamentos</div>
+            <ul>
+                <li *ngFor="let medicamento of medicamentos">{{medicamento.nombre}}</li>
+            </ul>
+            
+        <p><strong>Enfermedades</strong></p>
+            <div *ngIf="enfermedades.length == 0" class="alert alert-warning" role="alert">No posee enfermedades</div>
+            <ul>
+                <li *ngFor="let enfermedad of enfermedades">{{enfermedad.nombre}}</li>
+            </ul>
+            
+        <p><strong>Observaciones de dientes</strong></p>
+            <div *ngIf="dientes.length == 0" class="alert alert-warning" role="alert">No posee observaciones de dientes</div>
+            <span *ngFor="let diente of dientes">
+                <ul><li>Diente {{diente.diente}}
+                    <ul>
+                        <li>Seccion: {{diente.seccion}}</li>
+                        <li>Observación: {{diente.observacion}}</li>
+                    </ul></li></ul>
+            </span>
+            
     </div>
     <div class="col-md-6">
+        <h1>Consultas <small>(Solo del doctor)</small></h1>
+        <div *ngIf="consultasPorOdontologo.length == 0" class="alert alert-warning" role="alert">No posee consultas con el doctor</div>
+        <ul>
+            <span *ngFor="let consulta of consultasPorOdontologo; let i=index">
+                <h3>Consulta {{i+1}}</h3>
+                <li><strong>Observaciones:</strong> {{consulta.observaciones}}</li> 
+                <li><strong>Fecha de consulta:</strong> {{consulta.fecha}}</li>
+                <li><strong>Odontologo:</strong> {{consulta.odontologo}}
+                <li *ngIf="consulta.id_tratamiento != null"><strong>Tratamiento</strong><ul>
+                    <li><strong>Nombre:</strong>{{consulta.nombre}}</li>
+                    <li><strong>Detalles</strong>{{consulta.detalles}}</li> 
+                    <li><strong>Costo</strong>{{consulta.costo}}</li>        
+                </ul></li>       
+            </span>
+        </ul>
         <h1>Consultas <small>(Todos los doctores)</small></h1>
+        <div *ngIf="consultas.length == 0" class="alert alert-warning" role="alert">No ha tenido consultas el paciente</div>
         <ul>
             <span *ngFor="let consulta of consultas; let i=index">
                 <h3>Consulta {{i+1}}</h3>

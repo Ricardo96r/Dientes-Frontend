@@ -13,6 +13,9 @@ export class HistorialComponent {
     medicamentos:any = [];
     enfermedades:any = [];
     consultas:any = [];
+    consultasPorOdontologo:any = [];
+    paciente:any = [];
+    dientes:any = [];
 
     constructor(private api:ApiService, private router:Router, private routeParams:RouteParams) {
         this.getHistorial();
@@ -20,6 +23,9 @@ export class HistorialComponent {
         this.getMedicamentos();
         this.getEnfermedades();
         this.getConsultas();
+        this.getConsultasPorOdontologo();
+        this.getPaciente();
+        this.getDientes();
     }
 
     getHistorial() {
@@ -53,6 +59,27 @@ export class HistorialComponent {
     getConsultas() {
         this.api.getConsultas(this.routeParams.get('idPaciente')).subscribe(
             consultas => this.consultas = consultas,
+            error => console.error(error)
+        )
+    }
+    
+    getConsultasPorOdontologo() {
+        this.api.getConsultasPorOdontologo(this.routeParams.get('idOdontologo'), this.routeParams.get('idPaciente')).subscribe(
+            consultasPorOdontologo => this.consultasPorOdontologo = consultasPorOdontologo,
+            error => console.error(error)
+        )
+    }
+    
+    getPaciente() {
+        this.api.getPaciente(this.routeParams.get('idPaciente')).subscribe(
+            paciente => this.paciente = paciente[0],
+            error => console.error(error)
+        )
+    }
+    
+    getDientes() {
+        this.api.getDientes(this.routeParams.get('idPaciente')).subscribe(
+            dientes => this.dientes = dientes,
             error => console.error(error)
         )
     }
