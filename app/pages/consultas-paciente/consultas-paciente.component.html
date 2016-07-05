@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="page-header">
+                <h1>Consultas del paciente</h1>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-12">
+            <div *ngIf="consultas.length == 0" class="alert alert-warning" role="alert">Sin consultas</div>
+            <span *ngFor="let consulta of consultas; let i=index">
+                <div class="clearfix" *ngIf="(i % 4) == 0"></div>
+                <div class="col-md-3">
+                    <div class="well" (click)="irConsulta(consulta.id_odontologo, consulta.id_paciente)">
+                        <p><strong>Odontologo:</strong> {{consulta.odontologo}}</p>
+                        <p><strong>Observaciones:</strong> {{consulta.observaciones}}</p>
+                        <p><strong>Fecha:</strong> {{consulta.fecha}}<p>
+                        <p><strong>Tratamiento:</strong> 
+                            <span *ngIf="consulta.nombre == null">No hay tratamiento</span>
+                            <span *ngIf="consulta.nombre != null">{{consulta.nombre}}</span>
+                        </p>
+                        <p><strong>Tratamiento detalles:</strong>
+                            <span *ngIf="consulta.detalles == null">No hay detalles</span>
+                            <span *ngIf="consulta.detalles != null">{{consulta.detalles}}</span>
+                        </p>                       
+                    </div>
+                </div>
+            </span>
+        </div>
+    </div>
+</div>

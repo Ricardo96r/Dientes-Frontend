@@ -1,0 +1,28 @@
+<div class="container">
+<div class="row">
+    <div class="col-md-12">
+        <div class="page-header">
+            <h1>Consulta</h1>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <h1>Datos de la consulta</h1>
+            <p><strong>Odontologo:</strong> {{consulta.odontologo}}</p>
+            <p><strong>Observaciones:</strong> {{consulta.observaciones}}</p>
+            <p><strong>Fecha:</strong> {{consulta.fecha}}</p>
+            <p><strong>Tratamiento:</strong> 
+                <span *ngIf="consulta.nombre == null">No hay tratamiento</span>
+                <span *ngIf="consulta.nombre != null">{{consulta.nombre}}</span>
+            </p>
+            <p><strong>Tratamiento detalles:</strong>
+                <span *ngIf="consulta.detalles == null">No hay detalles</span>
+                <span *ngIf="consulta.detalles != null">{{consulta.detalles}}</span>
+            </p>
+        <button type="button" class="btn btn-primary btn-lg btn-block" (click)="irFacturar(consulta.id_consulta)">Facturar</button>
+    </div>
+    <div class="col-md-3"></div>
+</div>
+</div>

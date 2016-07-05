@@ -73,4 +73,12 @@ export class DashboardComponent {
         let link = ['Barras', {idOdontologo: idOdontologo}];
         this.router.navigate(link);
     }
+    
+    public chartClicked(e:any):void {
+        
+    }
+
+    public chartHovered(e:any):void {
+       
+    }
 }

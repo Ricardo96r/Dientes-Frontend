@@ -80,7 +80,7 @@
                     <span *ngIf="historial.embarazo == 0">No</span>
                     <span *ngIf="historial.embarazo == null">No</span>
                 </p>
-                <span *ngIf="(historial.embarazo == 0) || (historial.embarazo == null)">
+                
                     <p><strong>Ciclo menstrual regular:</strong>
                         <span *ngIf="historial.ciclo_menstrual_regular == 1">Si</span>
                         <span *ngIf="(historial.ciclo_menstrual_regular == 0) || (historial.ciclo_menstrual_regular == null) ">No</span>
@@ -89,7 +89,6 @@
                         <span *ngIf="historial.toma_anticonceptivos == 1">Si</span>
                         <span *ngIf="(historial.toma_anticonceptivos == 0) || (historial.toma_anticonceptivos == null) ">No</span>
                     </p>
-                </span>
             </span>
             
         <p><strong>Alergias</strong></p>

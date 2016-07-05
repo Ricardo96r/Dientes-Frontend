@@ -1,0 +1,66 @@
+<div class="container">
+   <div class="row">
+        <div class="col-md-12">
+            <div class="page-header">
+                <h1>Registrar cita</h1>
+            </div>
+        </div>
+    </div>
+    <span *ngIf="citaCreada">
+        <div class="jumbotron">
+            <center><h1>¡La cita se creó con éxito!</h1></center>
+        </div>
+    </span>
+    <span *ngIf="!citaCreada">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <form>
+                    <div class="form-group">
+                        <label for="paciente">Paciente: </label>
+                        <input type="text" class="form-control" id="paciente" value="{{paciente.nombre}}" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="odontologo">Odontólogo: </label>
+                        <select class="form-control" id="odontologo" [(ngModel)]="idOdontologo">
+                            <option *ngFor="let odontologo of odontologos" value="{{odontologo.id_odontologo}}">{{odontologo.nombre}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="motivo">Motivo: </label>
+                        <input type="text" class="form-control" id="motivo" [(ngModel)]="motivo">
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="dia">Dia: </label>
+                                <input type="date"  class="form-control" id="dia" [(ngModel)]="dia">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="hora">Hora: </label>
+                                <select class="form-control" [(ngModel)]="hora" id="hora">
+                                    <option value="-1">Hora</option>
+                                    <option *ngFor="let hora of horas; let i = index" value="{{i}}" >{{i}}</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="minutos">Minutos: </label>
+                                <select class="form-control" [(ngModel)]="minuto" id="minutos">
+                                    <option value="-1">Minutos</option>
+                                    <option *ngFor="let minuto of minutos; let i = index" value="{{i}}" >{{i+1}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-primary btn-lg btn-block" (click)="postCita()">Registrar Cita</button>
+                    </div>
+                    <div class="alert alert-danger" role="alert" *ngIf="errorCita">
+                        <a href="#" class="alert-link">La cita no se creo correctamente ya que no se colocaron bien los datos!</a>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </span>
+</div>

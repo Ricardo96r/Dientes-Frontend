@@ -60,6 +60,15 @@ export class ApiService {
     getOdontologos() {
         return this.getHttp("odontologos");
     }
+    
+    /*
+     *  Obtiene todos los odontologos
+     *
+     *  return json
+     */
+    getOdontologo(idOdontologo:any) {
+        return this.getHttp("detalleOdontologo/" + idOdontologo);
+    }
 
     /*
      *  Obtiene todos los pacientes de un odontologo
@@ -77,6 +86,15 @@ export class ApiService {
      */
     getHistorial(idPaciente:any) {
         return this.getHttp("historial/" + idPaciente);
+    }
+    
+    /*
+     *  Obtiene todos los pacientes de un odontologo
+     *
+     *  return json
+     */
+    getPacientes() {
+        return this.getHttp("pacientes");
     }
     
     /*
@@ -178,14 +196,21 @@ export class ApiService {
         return this.getHttp("tratamientoMes/" + mes + '/' + odontologo);
     }
 
-
-
+    /*
+     *  Obtiene todos los pacientes de un odontologo
+     *
+     *  return json
+     */
+    getConsulta(idOdontologo:any, idPaciente:any) {
+        return this.getHttp("consulta/odontologo/" + idOdontologo + "/paciente/" + idPaciente);
+    }
+    
     /*
      *  Crea un nuevo usuario
      *
      *  return json
      */
-    postUser(body:any) {
-        return this.postHttp("user", body);
+    postCita(body:any) {
+        return this.postHttp("registrarCita", body);
     }
 }

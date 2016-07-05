@@ -20,4 +20,14 @@ export class HeaderComponent {
         let link = ['HistorialOdontologos'];
         this.router.navigate(link);
     }
+    
+    irConsultaPaciente() {
+        let link = ['ConsultaPacientes'];
+        this.router.navigate(link);
+    }
+    
+    irCitaPaciente() {
+        let link = ['CitaPaciente'];
+        this.router.navigate(link);
+    }
 }

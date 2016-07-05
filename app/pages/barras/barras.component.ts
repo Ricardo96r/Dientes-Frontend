@@ -14,7 +14,7 @@ import {CHART_DIRECTIVES} from 'ng2-charts/ng2-charts';
 
 export class BarrasComponent {
     mes:number = 1;
-    mostrarBarras:boolean = true;
+    mostrarBarras:boolean = false;
     tratamientos:any = []
     public barChartLabels:string[] = ['Enero'];
     public barChartType:string = 'bar';
@@ -23,42 +23,73 @@ export class BarrasComponent {
         scaleShowVerticalLines: false,
         responsive: true
     };
-      public barChartData:any[] = [
-        {data: [65, 59, 80, 81, 56, 55, 40], label:'Series A'},
-        {data: [28, 48, 40, 19, 86, 27, 90], label:'Series B'},
-        {data: [28, 48, 40, 19, 86, 27, 90], label:'Series 3'},
-        {data: [28, 48, 40, 19, 86, 27, 90], label:'Series 1'}
-    ];
+    public barChartData:any[] = [];
+    public odontologo:any = [];
 
     constructor(private api:ApiService, private router:Router, private routeParams:RouteParams) {
         this.getTratamientoMes();
+        this.getOdontologo();
     }
-    
+   
     /*
      *  Obtiene todos los odontologos
      */
     getTratamientoMes() {
+        this.barChartLabels[0] = this.getMes(this.mes)
+        this.mostrarBarras = false;
         this.api.getTratamientoMes(this.mes, this.routeParams.get('idOdontologo')).subscribe(
             tratamientos => {
                 this.tratamientos = tratamientos
-                console.log(this.barChartData)
-                /*for (var prop in this.tratamientos) {
-                    this.barChartData.push({data: [this.tratamientos[prop].costo], label: this.tratamientos[prop].id_tratamiento});
-                    console.log(this.barChartData)y
-                }*/
+                for (var prop in this.tratamientos) {
+                    this.barChartData.push({data: [parseInt(this.tratamientos[prop].costo)], label: this.tratamientos[prop].nombre});
+                }
                 this.mostrarBarras = true;
             },
             error => console.error(error)
         )
     }
+    
+    getOdontologo() {
+        this.api.getOdontologo(this.routeParams.get('idOdontologo')).subscribe(
+            odontologo => this.odontologo = odontologo[0],
+            error => console.error(error)
+        )
+    }
+    
+    getMes(mes:number) {
+        if(mes == 1) {
+            return "Enero";
+        } else if(mes == 2) {
+            return "Febrero";
+        } else if(mes == 3) {
+            return "Marzo";
+        } else if(mes == 4) {
+            return "Abril";
+        } else if(mes == 5) {
+            return "Mayo"
+        } else if(mes == 6) {
+            return "Junio";
+        } else if(mes == 7) {
+            return "Julio";
+        } else if(mes == 8) {
+            return "Agosto";
+        } else if(mes == 9) {
+            return "Septiembre";
+        } else if(mes == 10) {
+            return "Octubre";
+        } else if(mes == 11) {
+            return "Noviembre";
+        } else {
+            return "Diciembre";
+        }
+    }
 
-  // events
   public chartClicked(e:any):void {
-    console.log(e);
+
   }
 
   public chartHovered(e:any):void {
-    console.log(e);
+
   }
   
 }
