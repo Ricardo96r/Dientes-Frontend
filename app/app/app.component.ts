@@ -5,6 +5,8 @@ import {HistorialOdontologosComponent}  from '../pages/historial-odontologos/his
 import {HistorialPacientesComponent}  from '../pages/historial-pacientes/historial-pacientes.component';
 import {HistorialComponent}  from '../pages/historial/historial.component';
 import {HeaderComponent} from '../pages/header/header.component';
+import {DashboardComponent} from '../pages/dashboard/dashboard.component';
+import {BarrasComponent} from '../pages/barras/barras.component';
 
 @Component({
     selector: 'my-app',
@@ -16,7 +18,9 @@ import {HeaderComponent} from '../pages/header/header.component';
 })
 
 @RouteConfig([
-    { path: '/historial/odontologo', name: 'HistorialOdontologos', component: HistorialOdontologosComponent, useAsDefault: true },
+    { path: '/', name: 'Dashboard', component: DashboardComponent, useAsDefault: true },
+    { path: '/barras/:idOdontologo', name: 'Barras', component: BarrasComponent },
+    { path: '/historial/odontologo', name: 'HistorialOdontologos', component: HistorialOdontologosComponent },
     { path: '/historial/odontologo/:idOdontologo', name: 'HistorialPacientes', component: HistorialPacientesComponent },
     { path: '/historial/odontologo/:idOdontologo/paciente/:idPaciente', name: 'Historial', component: HistorialComponent },
 ])

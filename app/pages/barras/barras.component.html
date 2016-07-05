@@ -1,0 +1,36 @@
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+<div class="page-header">
+    <h1>Tratamientos del doctor por mayores ganancias</h1>
+</div>
+            <div class="form-group">
+                <select class="form-control" [(ngModel)]="mes" (ngModelChange)="getTratamientoMes()">
+                    <option value="1">Enero</option>
+                    <option value="2">Febrero</option>
+                    <option value="3">Marzo</option>
+                    <option value="4">Abril</option>
+                    <option value="5">Mayo</option>
+                    <option value="6">Junio</option>
+                    <option value="7">Julio</option>
+                    <option value="8">Agosto</option>
+                    <option value="9">Septiembre</option>
+                    <option value="10">Octubre</option>
+                    <option value="11">Noviembre</option>
+                    <option value="12">Diciembre</option>
+                </select>
+            </div>
+<span *ngIf="mostrarBarras">
+<base-chart class="chart"
+           [datasets]="barChartData"
+           [labels]="barChartLabels"
+           [options]="barChartOptions"
+           [legend]="barChartLegend"
+           [chartType]="barChartType"
+           (chartHover)="chartHovered($event)"
+           (chartClick)="chartClicked($event)"></base-chart>
+</span>
+        </div>
+    </div>
+</div>

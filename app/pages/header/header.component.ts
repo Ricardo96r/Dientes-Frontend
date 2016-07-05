@@ -11,6 +11,11 @@ export class HeaderComponent {
     constructor(private router:Router) {
     }
 
+    irDashboard() {
+        let link = ['Dashboard'];
+        this.router.navigate(link);
+    }
+    
     irHistorial() {
         let link = ['HistorialOdontologos'];
         this.router.navigate(link);
