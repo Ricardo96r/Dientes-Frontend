@@ -78,13 +78,58 @@ export class ApiService {
     getHistorial(idPaciente:any) {
         return this.getHttp("historial/" + idPaciente);
     }
+    
+    /*
+     *  Obtiene todos los pacientes de un odontologo
+     *
+     *  return json
+     */
+    getAlergias(idPaciente:any) {
+        return this.getHttp("alergias/" + idPaciente);
+    }
+    
+    /*
+     *  Obtiene todos los pacientes de un odontologo
+     *
+     *  return json
+     */
+    getEnfermedades(idPaciente:any) {
+        return this.getHttp("enfermedades/" + idPaciente);
+    }
+    
+    /*
+     *  Obtiene todos los pacientes de un odontologo
+     *
+     *  return json
+     */
+    getMedicamentos(idPaciente:any) {
+        return this.getHttp("medicamentos/" + idPaciente);
+    }
+    
+    /*
+     *  Obtiene todos los pacientes de un odontologo
+     *
+     *  return json
+     */
+    getConsultas(idPaciente:any) {
+        return this.getHttp("consultasPaciente/" + idPaciente);
+    }
+    
+    /*
+     *  Obtiene todos los pacientes de un odontologo
+     *
+     *  return json
+     */
+    getConsultasPorOdontologo(idOdontologo:any, idPaciente:any) {
+        return this.getHttp("consulta/odontologo/" + idOdontologo + "/paciente/" + idPaciente);
+    }
 
     /*
      *  Crea un nuevo usuario
      *
      *  return json
      */
-    postUser(body:string) {
+    postUser(body:any) {
         return this.postHttp("user", body);
     }
 }
