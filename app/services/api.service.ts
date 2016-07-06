@@ -292,7 +292,7 @@ export class ApiService {
      *  return json
      */
     postAlergia(body:any) {
-        return this.postHttp("nuevaAlergia", body);
+        return this.postHttp("anexarAlergia", body);
     }
     
         /*
@@ -301,7 +301,7 @@ export class ApiService {
      *  return json
      */
     postEnfermedad(body:any) {
-        return this.postHttp("nuevaEnfermedad", body);
+        return this.postHttp("anexarEnfermedad", body);
     }
     
      /*
@@ -310,6 +310,6 @@ export class ApiService {
      *  return json
      */
     postMedicamento(body:any) {
-        return this.postHttp("nuevoMedicamento", body);
+        return this.postHttp("anexarMedicamento", body);
     }
 }

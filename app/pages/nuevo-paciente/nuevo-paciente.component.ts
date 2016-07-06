@@ -22,13 +22,13 @@ export class NuevoPacienteComponent {
     ultimaVisita:any;
     aprietaDientes:any;
     dolorDiente:any;
-    dolorDientesObservacion:any;
+    dolorDientesObservacion:any = null;
     sangraEncias:any;
-    sangraEnciasObservacion:any;
+    sangraEnciasObservacion:any = null;
     ruidoMandibula:any;
-    ruidoMandibulaObservacion:any;
+    ruidoMandibulaObservacion:any = null;
     fuma:any;
-    cigarrillosDiarios:any;
+    cigarrillosDiarios:any = null;
     muerdeObjetos:any;
     muerdeUnas:any;
     experienciaDentalNegativa:any;
@@ -91,15 +91,15 @@ export class NuevoPacienteComponent {
     }
     
     getBodyHistorial() {
-        'id=' + this.idPaciente +
+        return 'id=' + this.idPaciente +
 		'&ultima_visita_al_odontologo=' + this.ultimaVisita +
 		'&aprieta_los_dientes=' + this.aprietaDientes +
 		'&dolor_de_dientes=' + this.dolorDiente +
-		'&observacion_dolor=' + this.dolorDientesObservacion +
+		'&observacion_dolor=' + (this.dolorDientesObservacion != null ? this.dolorDientesObservacion : "NULL") +
 		'&sangrado_de_encias=' + this.sangraEncias +
-		'&observacion_sangrado=' + this.sangraEnciasObservacion +
+		'&observacion_sangrado=' + (this.sangraEnciasObservacion != null ? this.sangraEnciasObservacion : "NULL") +
 		'&ruido_al_mover_la_mandibula=' + this.ruidoMandibula +
-		'&observacion_ruidos=' + this.ruidoMandibulaObservacion +
+		'&observacion_ruidos=' + (this.ruidoMandibulaObservacion != null ? this.ruidoMandibulaObservacion : "NULL") +
 		'&fuma=' + this.fuma +
 		'&cigarrillos_diarios=' + this.cigarrillosDiarios +
 		'&muerde_objetos_extranos=' + this.muerdeObjetos +
@@ -359,9 +359,9 @@ export class NuevoPacienteComponent {
                     return false;
         }
         
-        if(isNaN(parseFloat(this.cigarrillosDiarios))){
-        this.errorValidacion = "El campo de cigarrillosDiarios posee errores";
-        return false;
+        if( isNaN(parseFloat(this.cigarrillosDiarios)) && (this.cigarrillosDiarios != undefined)) {
+            this.errorValidacion = "El campo de cigarrillosDiarios posee errores";
+            return false; 
         }
                 if(this.muerdeObjetos== undefined){
         this.errorValidacion = "El campo de muerdeObjetos posee errores";
