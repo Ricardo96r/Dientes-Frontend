@@ -1,18 +1,28 @@
-<div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-6">
-        <div class="form-group">
-            <button type="button" class="btn btn-primary btn-lg btn-block" (click)="irNuevoPaciente()">Nuevo paciente</button>
-        </div>
-        <form>
-            <div class="form-group">
-                <label for="paciente">Nombre del paciente</label>
-                <input type="text" class="form-control" id="paciente" placeholder="Nombre del paciente">
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="page-header">
+                <h1>Citas</h1>
             </div>
-        </form>
-        <div class="list-group">
-            <button type="button" class="list-group-item" *ngFor="let paciente of pacientes" (click)="irCrearCita(paciente.id_paciente)">{{paciente.nombre}}</button>
         </div>
     </div>
-    <div class="col-md-3"></div>
+
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <button type="button" class="btn btn-primary btn-lg btn-block" (click)="irNuevoPaciente()">Nuevo paciente</button>
+            </div>
+            <form>
+                <div class="form-group">
+                    <label for="paciente">Nombre del paciente</label>
+                    <input type="text" class="form-control" id="paciente" placeholder="Nombre del paciente">
+                </div>
+            </form>
+            <div class="list-group">
+                <button type="button" class="list-group-item" *ngFor="let paciente of pacientes" (click)="irCrearCita(paciente.id)">{{paciente.nombre}}</button>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
 </div>

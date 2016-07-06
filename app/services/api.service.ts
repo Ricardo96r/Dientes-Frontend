@@ -206,11 +206,110 @@ export class ApiService {
     }
     
     /*
+     *  Obtiene todos los pacientes de un odontologo
+     *
+     *  return json
+     */
+    getFactura(idConsulta:any) {
+        return this.getHttp("facturas/" + idConsulta);
+    }
+    
+     /*
+     *  Obtiene todos los pacientes de un odontologo
+     *
+     *  return json
+     */
+    getCitasPaciente(idPaciente:any) {
+        return this.getHttp("citasPaciente/" + idPaciente);
+    }
+    
+    /*
      *  Crea un nuevo usuario
      *
      *  return json
      */
     postCita(body:any) {
         return this.postHttp("registrarCita", body);
+    }
+    
+    /*
+     *  Obtiene todos los pacientes de un odontologo
+     *
+     *  return json
+     */
+    getTodasAlergias() {
+        return this.getHttp("alergias");
+    }
+    
+    /*
+     *  Obtiene todos los pacientes de un odontologo
+     *
+     *  return json
+     */
+    getTodasEnfermedades() {
+        return this.getHttp("enfermedades");
+    }
+    
+    /*
+     *  Obtiene todos los pacientes de un odontologo
+     *
+     *  return json
+     */
+    getTodasMedicamentos() {
+        return this.getHttp("medicamentos");
+    }
+    
+    /*
+     *  Crea un nuevo usuario
+     *
+     *  return json
+     */
+    postPaciente(body:any) {
+        return this.postHttp("registrarPaciente", body);
+    }
+    
+    /*
+     *  Crea un nuevo usuario
+     *
+     *  return json
+     */
+    postHistorial(body:any) {
+        return this.postHttp("registrarHistorial", body);
+    }
+    
+        /*
+     *  Crea un nuevo usuario
+     *
+     *  return json
+     */
+    postDiente(body:any) {
+        return this.postHttp("diente", body);
+    }
+    
+        /*
+     *  Crea un nuevo usuario
+     *
+     *  return json
+     */
+    postAlergia(body:any) {
+        return this.postHttp("nuevaAlergia", body);
+    }
+    
+        /*
+     *  Crea un nuevo usuario
+     *
+     *  return json
+     */
+    postEnfermedad(body:any) {
+        return this.postHttp("nuevaEnfermedad", body);
+    }
+    
+     /*
+     *  Crea un nuevo usuario
+     *
+     *  return json
+     */
+    postMedicamento(body:any) {
+        return this.postHttp("nuevoMedicamento", body);
     }
 }

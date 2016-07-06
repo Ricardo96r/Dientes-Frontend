@@ -20,11 +20,13 @@ export class CitaComponent {
     motivo:string;
     citaCreada:boolean = false
     errorCita: boolean = false
+    citas:any = [];
 
     constructor(private api:ApiService, private router:Router, private routeParams:RouteParams) {
         this.getOdontologos();
         this.getPaciente();
         this.generarMinutos();
+        this.getCitas();
     }
     
     postCita() {
@@ -36,6 +38,7 @@ export class CitaComponent {
                     if (cita.resultado == "exito") {
                         this.citaCreada = true;
                         this.errorCita = false;
+                        this.getCitas();
                     } else {
                         this.errorCita = false;
                     }
@@ -79,6 +82,13 @@ export class CitaComponent {
     getPaciente() {
         this.api.getPaciente(this.routeParams.get('idPaciente')).subscribe(
             paciente => this.paciente = paciente[0],
+            error => console.error(error)
+        )
+    }
+    
+    getCitas() {
+        this.api.getCitasPaciente(this.routeParams.get('idPaciente')).subscribe(
+            citas => this.citas = citas,
             error => console.error(error)
         )
     }

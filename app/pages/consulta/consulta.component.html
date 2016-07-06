@@ -21,7 +21,7 @@
                 <span *ngIf="consulta.detalles == null">No hay detalles</span>
                 <span *ngIf="consulta.detalles != null">{{consulta.detalles}}</span>
             </p>
-        <button type="button" class="btn btn-primary btn-lg btn-block" (click)="irFacturar(consulta.id_consulta)">Facturar</button>
+        <button type="button" class="btn btn-primary btn-lg btn-block" (click)="irFacturar(consulta.id)">Facturar</button>
     </div>
     <div class="col-md-3"></div>
 </div>

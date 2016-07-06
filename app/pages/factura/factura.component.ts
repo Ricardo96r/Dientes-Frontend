@@ -10,17 +10,20 @@ import {Router, RouteParams} from '@angular/router-deprecated';
 
 export class FacturaComponent {
     pacientes:any = [];
+    factura:any = [];
+    consulta:any = [];
 
     constructor(private api:ApiService, private router:Router, private routeParams:RouteParams) {
-        this.getPacientes();
+        this.getFactura();
     }
-
-    getPacientes() {
-        this.api.getPacientes().subscribe(
-            pacientes => this.pacientes = pacientes,
+    
+    getFactura() {
+        this.api.getFactura(this.routeParams.get('idConsulta')).subscribe(
+            factura => this.factura = factura,
             error => console.error(error)
         )
     }
+    
 
     irConsultasPaciente(idPaciente:number) {
         let link = ['ConsultasPaciente', {idPaciente: idPaciente}];

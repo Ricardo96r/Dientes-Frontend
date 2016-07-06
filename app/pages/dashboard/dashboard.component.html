@@ -100,7 +100,7 @@
             <span *ngFor="let odontologo of odontologos; let i=index">
                 <div class="clearfix" *ngIf="(i % 4) == 0"></div>
                 <div class="col-md-3">
-                    <div class="well" (click)="irGraficoBarras(odontologo.id_odontologo)">
+                    <div class="well" (click)="irGraficoBarras(odontologo.id)">
                         {{ odontologo.nombre }}
                     </div>
                 </div>

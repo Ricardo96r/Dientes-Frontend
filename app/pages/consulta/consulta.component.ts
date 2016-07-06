@@ -16,7 +16,7 @@ export class ConsultaComponent {
     
     getConsulta() {
         this.api.getConsulta(this.routeParams.get('idOdontologo'), this.routeParams.get('idPaciente')).subscribe(
-            consulta => this.consulta = consulta,
+            consulta => this.consulta = consulta[0],
             error => console.error(error)
         )
     }

@@ -1,3 +1,12 @@
+ <div class="container">
+ <div class="row">
+    <div class="col-md-12">
+        <div class="page-header">
+            <h1>Historial</h1>
+        </div>
+    </div>
+</div>
+
 <div class="row">
     <div class="col-md-3"></div>
     <div class="col-md-6">
@@ -8,8 +17,9 @@
             </div>
         </form>
         <div class="list-group">
-            <button type="button" class="list-group-item" *ngFor="let odontologo of odontologos" (click)="irHistorialOdontologo(odontologo.id_odontologo)">{{odontologo.nombre}}</button>
+            <button type="button" class="list-group-item" *ngFor="let odontologo of odontologos" (click)="irHistorialOdontologo(odontologo.id)">{{odontologo.nombre}}</button>
         </div>
     </div>
     <div class="col-md-3"></div>
 </div>
+ </div>

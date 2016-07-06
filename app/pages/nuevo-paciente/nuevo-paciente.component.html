@@ -7,375 +7,349 @@
         </div>
     </div>
 
+    <span *ngIf="fin">
+        <div class="jumbotron">
+            <center><h1>¡El paciente se creó con éxito!</h1></center>
+        </div>
+    </span>
+
+<span *ngIf="!fin">
     <div class="row">
-        <div class="col-md-6">
-        <h1>Datos del paciente</h1>
-        
-        <form class="form-horizontal">
-          <div class="form-group">
-            <label for="inputFechaNac" class="col-sm-6 control-label">Fecha de nacimiento</label>
-                <input type='date' class="form-control" [(ngModel)]="nacimiento">
-            </div>
-            <!-- /Seleccionador de fecha -->
-            <!-- Escritura de cedula-->
-            <div class="form-group">
-              <label for="inputCedula" class="col-sm-6 control-label">Cedula</label>
+        <div class="col-md-12">
+            <h1>Datos del paciente</h1>
+
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="inputFechaNac" class="col-sm-6 control-label">Fecha de nacimiento</label>
+                    <div class="col-sm-6">
+                        <input type='date' class="form-control" [(ngModel)]="nacimiento">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputCedula" class="col-sm-6 control-label">Cedula</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="inputCedula" placeholder="12345678"
+                               [(ngModel)]="cedula">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputNombre" class="col-sm-6 control-label">Nombre</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="inputNombre" placeholder="Pedro Perez"
+                               [(ngModel)]="nombre">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputNombre" class="col-sm-6 control-label">Segundo nombre</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="inputNombre" placeholder="Pedro Perez"
+                               [(ngModel)]="segundoNombre">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputNombre" class="col-sm-6 control-label">Apellido</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="inputNombre" placeholder="Pedro Perez"
+                               [(ngModel)]="apellido">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputNombre" class="col-sm-6 control-label">Segundo Apellido</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="inputNombre" placeholder="Pedro Perez"
+                               [(ngModel)]="segundoApellido">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputOcupacion" class="col-sm-6 control-label">Ocupacion</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="inputOcupacion" placeholder="Profesor"
+                               [(ngModel)]="ocupacion">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputOcupacion" class="col-sm-6 control-label">Telefono</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="inputOcupacion" placeholder="0412-1234567"
+                               [(ngModel)]="telefono">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputOcupacion" class="col-sm-6 control-label">Telefono de emergencias</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="inputOcupacion" placeholder="0412-1234567"
+                               [(ngModel)]="telefonoEmergencias">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputGenero" class="col-sm-6 control-label">Genero</label>
+                    <div class="col-sm-6">
+                        <select class="form-control" [(ngModel)]="genero" id="hora">
+                                <option value="Hombre">Hombre</option>
+                                <option value="Mujer">Mujer</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+
+            <h1>Historial clínico</h1>
+            <form class="form-horizontal">
+                
+                <div class="form-group">
+                    <label for="inputNombre" class="col-sm-6 control-label">Ultima visita al odontologo</label>
+                    <div class="col-sm-6">
+                        <input type="date" class="form-control" id="inputNombre" placeholder="Fecha" [(ngModel)]="ultimaVisita">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-6 control-label">Aprieta los dientes</label>
+                    <div class="col-sm-6">
+                        <select class="form-control" [(ngModel)]="aprietaDientes" id="hora">
+                                <option value="1">Si</option>
+                                <option value="0">No</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="col-sm-6  control-label">Dolor de dientes</label>
+                    <div class="col-sm-6">
+                        <select class="form-control" [(ngModel)]="dolorDiente" id="hora">
+                                <option value="1">Si</option>
+                                <option value="0">No</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+              <label for="inputDolorObs" class="col-sm-6 control-label">Observaciones</label>
               <div class="col-sm-6">
-                <input type="text" class="form-control" id="inputCedula" placeholder="12345678" [(ngModel)]="cedula">
+                <input type="text" class="form-control" id="inputDolorObs" placeholder="Observaciones" [(ngModel)]="dolorDienteObservacion">
               </div>
             </div>
-            <!-- /Escritura de cedula-->
-            <!-- Escritura del nombre-->
-            <div class="form-group">
-              <label for="inputNombre" class="col-sm-6 control-label">Nombre</label>
-              <div class="col-sm-6">
-                <input type="text" class="form-control" id="inputNombre" placeholder="Pedro Perez" [(ngModel)]="nombre">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="inputNombre" class="col-sm-6 control-label">Segundo nombre</label>
-              <div class="col-sm-6">
-                <input type="text" class="form-control" id="inputNombre" placeholder="Pedro Perez" [(ngModel)]="segundoNombre">
-              </div>
-            </div>
+            
+                <div class="form-group">
+                    <label class="col-sm-6  control-label">Sangrado de encias</label>
+                    <div class="col-sm-6">
+                        <select class="form-control" [(ngModel)]="sangraEncias" id="hora">
+                                <option value="1">Si</option>
+                                <option value="0">No</option>
+                        </select>
+                    </div>
+                </div>
+                
+                    <div class="form-group">
+                <label for="inputDolorSang" class="col-sm-6 control-label">Observaciones</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="inputDolorSang" placeholder="Observaciones" [(ngModel)]="sangraEnciasObservacion">
+                </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="col-sm-6  control-label">Ruido al mover la mandibula</label>
+                    <div class="col-sm-6">
+                        <select class="form-control" [(ngModel)]="ruidoMandibula" id="hora">
+                                <option value="1">Si</option>
+                                <option value="0">No</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="inputRuido" class="col-sm-6 control-label">Observaciones</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="inputRuido" placeholder="Observaciones" [(ngModel)]="ruidoMandibulaObservacion">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="col-sm-6  control-label">Fuma</label>
+                    <div class="col-sm-6">
+                        <select class="form-control" [(ngModel)]="fuma" id="hora">
+                                <option value="1">Si</option>
+                                <option value="0">No</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                <label for="inputDolorSang" class="col-sm-6 control-label">Cigarrillos diarios</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="inputDolorSang" placeholder="Cigarrillos" [(ngModel)]="cigarrillosDiarios">
+                </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="col-sm-6  control-label">Muerde objetos extranos</label>
+                    <div class="col-sm-6">
+                        <select class="form-control" [(ngModel)]="muerdeObjetos" id="hora">
+                                <option value="1">Si</option>
+                                <option value="0">No</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-6  control-label">Muerde las unas</label>
+                    <div class="col-sm-6">
+                        <select class="form-control" [(ngModel)]="muerdeUnas" id="hora">
+                                <option value="1">Si</option>
+                                <option value="0">No</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-6  control-label">Experiencia dental negativa</label>
+                    <div class="col-sm-6">
+                        <select class="form-control" [(ngModel)]="experienciaDentalNegativa" id="hora">
+                                <option value="1">Si</option>
+                                <option value="0">No</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputInstruido" class="col-sm-6  control-label">Instruido en el cepillado</label>
+                    <div class="col-sm-6">
+                        <select class="form-control" [(ngModel)]="instruidoCepillado" id="hora">
+                                <option value="1">Si</option>
+                                <option value="0">No</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmbarazada" class="col-sm-6  control-label">Embarazada</label>
+                    <div class="col-sm-6">
+                        <select class="form-control" [(ngModel)]="embarazada" id="hora">
+                                <option value="1">Si</option>
+                                <option value="0">No</option>
+                                <option value="null">No aplica</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputCiclo" class="col-sm-6  control-label">Ciclo menstrual regular</label>
+                    <div class="col-sm-6">
+                        <select class="form-control" [(ngModel)]="cicloMenstrualRegular" id="hora">
+                                <option value="1">Si</option>
+                                <option value="0">No</option>
+                                <option value="null">No aplica</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputAnticoncep" class="col-sm-6  control-label">Toma anticonceptivos</label>
+                    <div class="col-sm-6">
+                        <select class="form-control" [(ngModel)]="tomaAnticonceptivos" id="hora">
+                                <option value="1">Si</option>
+                                <option value="0">No</option>
+                                <option value="null">No aplica</option>
+                        </select>
+                    </div>
+                </div>
+                
+                    <p><strong>Observaciones de dientes</strong></p>
+                    <div class="row">
+                        <span *ngFor="let num of numeroDientes; let i = index">
+                            <div class="form-group">
+                            <div class="col-md-4">
+                                <select class="form-control" [(ngModel)]="diente[i]" id="hora">
+                                    <option value="-1">Diente</option>
+                                    <option *ngFor="let data of dientesData; let i = index" value="{{data}}" >{{data}}</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <select class="form-control" [(ngModel)]="dienteSeccion[i]" id="hora">
+                                    <option value="-1">Seccion</option>
+                                    <option *ngFor="let data of seccionData; let i = index" value="{{data}}" >{{data}}</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" placeholder="Observacion" [(ngModel)]="dienteObservacion[i]">
+                            </div>
+                            </div>
+                        </span>
                         <div class="form-group">
-              <label for="inputNombre" class="col-sm-6 control-label">Apellido</label>
-              <div class="col-sm-6">
-                <input type="text" class="form-control" id="inputNombre" placeholder="Pedro Perez" [(ngModel)]="apellido">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="inputNombre" class="col-sm-6 control-label">Segundo Apellido</label>
-              <div class="col-sm-6">
-                <input type="text" class="form-control" id="inputNombre" placeholder="Pedro Perez" [(ngModel)]="nombre">
-              </div>
-            </div>
-          <!-- /Escritura de nombre-->
-          <!-- Escritura del ocupacion-->
-          <div class="form-group">
-            <label for="inputOcupacion" class="col-sm-6 control-label">Ocupacion</label>
-            <div class="col-sm-6">
-              <input type="text" class="form-control" id="inputOcupacion" placeholder="Profesor">
-            </div>
-          </div>
-          <!-- /Escritura de ocupacion -->
-          <!-- Telefono -->
-          <!-- ARREGLAR No funciona el dropdown para las selecciones -->
-            <div class="form-group">
-              <label for="inputOcupacion" class="col-sm-6 control-label">Telefono</label>
-              <div class="col-lg-6">
-                 <div class="input-group">
-                   <div class="input-group-btn">
-                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Prefijo <span class="caret"></span></button>
-                     <ul class="dropdown-menu">
-                       <li><a href="#">0412</a></li>
-                       <li><a href="#">0414</a></li>
-                       <li><a href="#">0416</a></li>
-                     </ul>
-                   </div><!-- /btn-group -->
-                   <input type="text" class="form-control" aria-label="..." placeholder="1234567">
-                 </div><!-- /input-group -->
-               </div><!-- /.col-lg-6 -->
-            </div>
-          <!-- /Telefono -->
-          <!-- Telefono de emergencia -->
-          <!-- ARREGLAR No funciona el dropdown para las selecciones -->
-            <div class="form-group">
-              <label for="inputOcupacion" class="col-sm-6 control-label">Telefono de emergencia</label>
-              <div class="col-lg-6">
-                 <div class="input-group">
-                   <div class="input-group-btn">
-                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Prefijo <span class="caret"></span></button>
-                     <ul class="dropdown-menu">
-                       <li><a href="#">0412</a></li>
-                       <li><a href="#">0414</a></li>
-                       <li><a href="#">0416</a></li>
-                     </ul>
-                   </div><!-- /btn-group -->
-                   <input type="text" class="form-control" aria-label="..." placeholder="1234567">
-                 </div><!-- /input-group -->
-               </div><!-- /.col-lg-6 -->
-            </div>
-          <!-- /Telefono de emergencia -->
-          <!-- Genero -->
-            <div class="form-group">
-              <label for="inputGenero" class="col-sm-6 control-label">Genero</label>
-              <div class="col-sm-6">
-                <label class="radio-inline">
-                  <input type="radio" name="radioGenero" id="radioGenero1" value="femenino"> Femenino
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="radioGenero" id="radioGenero2" value="masculino"> Masculino
-                </label>
-              </div>
-            </div>
-          <!-- /Genero -->
-        </form>
-        <!-- Historial clinico-->
-        <h1>Historial clínico</h1>
-          <form class="form-horizontal">
-            <!-- Fecha de creacion -->
-            <p><strong>Fecha de creacion:</strong>
-              <!-- Esto da la fecha actual -->
-              <script language="javascript">
-                var today = new Date();
-                document.write(today);
-              </script></p>
-            <!-- /Fecha de creacion -->
-            <!-- Ultima visita al odontologo -->
-            <!-- ARREGLAR no se como implementarlo, puede ser como Fecha de Nacimiento
-            si lo logro hacer funcionar, o que se venga automatico segun el paciente.
-            Esto va ligado al paciente seleccionado, no?-->
-            <label for="inputAprietaD" class="col-sm-6  control-label">Ultima visita al odontologo</label>
-            <div class="col-sm-6">
-              <input type="text" class="form-control" id="inputNombre" placeholder="Fecha">
-            </div>
-            <!-- /Ultima visita al odontologo -->
-            <!-- Aprieta los dientes -->
-            <div class="form-group">
-              <!-- ARREGLAR alinacion del label-->
-              <label for="inputAprietaD" class="col-sm-6  control-label">Aprieta los dientes</label>
-              <div class="col-sm-6">
-                <label class="radio-inline">
-                  <input type="radio" name="radioAprieta" id="radioAprietaSi" value="true"> Si
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="radioAprieta" id="radioAprietaNo" value="false"> No
-                </label>
-              </div>
-            </div>
-            <!-- /Aprieta los dientes -->
-            <!-- Dolor de dientes -->
-            <div class="form-group">
-              <!-- ARREGLAR alinacion del label-->
-              <label for="inputDolorD" class="col-sm-6  control-label">Dolor de dientes</label>
-              <div class="col-sm-6">
-                <label class="radio-inline">
-                  <input type="radio" name="radioDolor" id="radioDolorSi" value="true"> Si
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="radioDolor" id="radioDolorNo" value="false"> No
-                </label>
-              </div>
-            </div>
-            <!-- /Dolor de dientes -->
-            <!-- Observaciones sobre el dolor -->
-            <!-- ARREGLAR agregar input para observaciones sobre el dolor -->
-            <!-- /Observaciones sobre el dolor -->
-            <!-- Sangrado de encias -->
-            <div class="form-group">
-              <!-- ARREGLAR alinacion del label-->
-              <label for="inputSangrado" class="col-sm-6  control-label">Sangrado de encias</label>
-              <div class="col-sm-6">
-                <label class="radio-inline">
-                  <input type="radio" name="radioSangrado" id="radioSangradoSi" value="true"> Si
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="radioSangrado" id="radioSangradoNo" value="false"> No
-                </label>
-              </div>
-            </div>
-            <!-- /Sangrado de encias -->
-            <!-- Observaciones sobre el sangrado -->
-            <!-- ARREGLAR agregar input para observaciones sobre el sangrado -->
-            <!-- /Observaciones sobre el sangrado -->
-            <!-- Ruido al mover la mandibula -->
-            <div class="form-group">
-              <!-- ARREGLAR alinacion del label-->
-              <label for="inputRuido" class="col-sm-6  control-label">Ruido al mover la mandibula</label>
-              <div class="col-sm-6">
-                <label class="radio-inline">
-                  <input type="radio" name="radioRuido" id="radioRuidoSi" value="true"> Si
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="radioRuido" id="radioRuidoNo" value="false"> No
-                </label>
-              </div>
-            </div>
-            <!-- /Ruido al mover la mandibula -->
-            <!-- Observaciones sobre el ruido al mover la mandibula -->
-            <!-- ARREGLAR agregar input para observaciones sobre el ruido al mover la mandibula -->
-            <!-- /Observaciones sobre el ruido al mover la mandibula -->
-            <!-- Fuma -->
-            <div class="form-group">
-              <!-- ARREGLAR alinacion del label-->
-              <label for="inputFuma" class="col-sm-6  control-label">Fuma</label>
-              <div class="col-sm-6">
-                <label class="radio-inline">
-                  <input type="radio" name="radioFuma" id="radioFumaSi" value="true"> Si
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="radioFuma" id="radioFumaNo" value="false"> No
-                </label>
-              </div>
-            </div>
-            <!-- /Fuma -->
-            <!-- Cantidad de cigarros diarios -->
-            <!-- ARREGLAR agregar campo numero para cigarros diarios -->
-            <!-- /Cantidad de cigarros diarios -->
-            <!-- Muerde objetos extranos -->
-            <div class="form-group">
-              <!-- ARREGLAR alinacion del label-->
-              <label for="inputMuerdeO" class="col-sm-6  control-label">Muerde objetos extranos</label>
-              <div class="col-sm-6">
-                <label class="radio-inline">
-                  <input type="radio" name="radioMuerdeO" id="radioMuerdeOSi" value="true"> Si
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="radioMuerdeO" id="radioMuerdeONo" value="false"> No
-                </label>
-              </div>
-            </div>
-            <!-- /Muerde objetos extranos -->
-            <!-- Muerde unas -->
-            <div class="form-group">
-              <!-- ARREGLAR alinacion del label-->
-              <label for="inputMuerdeU" class="col-sm-6  control-label">Muerde las unas</label>
-              <div class="col-sm-6">
-                <label class="radio-inline">
-                  <input type="radio" name="radioMuerdeU" id="radioMuerdeUSi" value="true"> Si
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="radioMuerdeU" id="radioMuerdeUNo" value="false"> No
-                </label>
-              </div>
-            </div>
-            <!-- /Muerde unas -->
-            <!-- Experiencia dental negativa -->
-            <div class="form-group">
-              <!-- ARREGLAR alinacion del label-->
-              <label for="inputExperiencia" class="col-sm-6  control-label">Experiencia dental negativa</label>
-              <div class="col-sm-6">
-                <label class="radio-inline">
-                  <input type="radio" name="radioExperiencia" id="radioExperienciaSi" value="true"> Si
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="radioExperiencia" id="radioExperienciaNo" value="false"> No
-                </label>
-              </div>
-            </div>
-            <!-- /Experiencia dental negativa -->
-            <!-- Instruido en el cepillado -->
-            <div class="form-group">
-              <!-- ARREGLAR alinacion del label-->
-              <label for="inputInstruido" class="col-sm-6  control-label">Instruido en el cepillado</label>
-              <div class="col-sm-6">
-                <label class="radio-inline">
-                  <input type="radio" name="radioInstruido" id="radioInstruidoSi" value="true"> Si
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="radioInstruido" id="radioInstruidoNo" value="false"> No
-                </label>
-              </div>
-            </div>
-            <!-- /Instruido en el cepillado -->
-            <!-- Embarazada -->
-            <div class="form-group">
-              <!-- ARREGLAR alinacion del label-->
-              <label for="inputEmbarazada" class="col-sm-6  control-label">Embarazada</label>
-              <div class="col-sm-6">
-                <label class="radio-inline">
-                  <input type="radio" name="radioEmbarazada" id="radioEmbarazadaSi" value="true"> Si
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="radioEmbarazada" id="radioEmbarazadaNo" value="false"> No
-                </label>
-              </div>
-            </div>
-            <!-- /Embarazada -->
-            <!-- Ciclo menstrual regular -->
-            <div class="form-group">
-              <!-- ARREGLAR alinacion del label-->
-              <label for="inputCiclo" class="col-sm-6  control-label">Ciclo menstrual regular</label>
-              <div class="col-sm-6">
-                <label class="radio-inline">
-                  <input type="radio" name="radioCiclo" id="radioCicloSi" value="true"> Si
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="radioCiclo" id="radioCicloNo" value="false"> No
-                </label>
-              </div>
-            </div>
-            <!-- /Ciclo menstrual regular -->
-            <!-- Toma anticonceptivos -->
-            <div class="form-group">
-              <!-- ARREGLAR alinacion del label-->
-              <label for="inputAnticoncep" class="col-sm-6  control-label">Toma anticonceptivos</label>
-              <div class="col-sm-6">
-                <label class="radio-inline">
-                  <input type="radio" name="radioAnticoncep" id="radioAnticoncepSi" value="true"> Si
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="radioAnticoncep" id="radioAnticoncepNo" value="false"> No
-                </label>
-              </div>
-            </div>
-            <!-- /Toma anticonceptivos -->
-          </form>
-        <!-- /Historial clinico -->
+                            <button class="btn btn-default" type="submit" (click)="agregarNuevoDiente()">Agregar nueva observacion de dientes</button>
+                        </div>
+                    </div>
 
-        <p><strong>Alergias</strong></p>
-        <!-- ARREGLAR hay que incluir aqui unos multiselect pero no se instalarlo
-      con esto de Angular2 y no quiero danar nada-->
-            <div *ngIf="alergias.length == 0" class="alert alert-warning" role="alert">No posee alergias</div>
-            <ul>
-                <li *ngFor="let alergia of alergias">{{alergia.nombre}}</li>
-            </ul>
+            <p><strong>Alergias</strong></p>
+                    <div class="row">
+                        <span *ngFor="let num of numeroAlergias; let i = index">
+                            <div class="form-group">
+                            <div class="col-md-6">
+                                <select class="form-control" [(ngModel)]="alergias[i]" id="hora">
+                                    <option value="-1">Alergias</option>
+                                    <option *ngFor="let data of alergiaData; let i = index" value="{{data.id}}" >{{data.nombre}}</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Detalles" [(ngModel)]="alergiaObservacion[i]">
+                            </div>
+                            </div>
+                        </span>
+                        <div class="form-group">
+                            <button class="btn btn-default" type="submit" (click)="agregarNuevaAlergia()">Agregar nueva alergia</button>
+                        </div>
+                    </div>
 
-        <p><strong>Medicamentos</strong></p>
-            <div *ngIf="medicamentos.length == 0" class="alert alert-warning" role="alert">No posee medicamentos</div>
-            <ul>
-                <li *ngFor="let medicamento of medicamentos">{{medicamento.nombre}}</li>
-            </ul>
+            <p><strong>Medicamentos</strong></p>
+                    <div class="row">
+                        <span *ngFor="let num of numeroMedicamentos; let i = index">
+                            <div class="form-group">
+                            <div class="col-md-6">
+                                <select class="form-control" [(ngModel)]="medicamentos[i]" id="hora">
+                                    <option value="-1">Medicamentos</option>
+                                    <option *ngFor="let data of medicamentoData; let i = index" value="{{data.id}}" >{{data.nombre}}</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Detalles" [(ngModel)]="medicamentoObservacion[i]">
+                            </div>
+                            </div>
+                        </span>
+                        <div class="form-group">
+                            <button class="btn btn-default" type="submit" (click)="agregarNuevoMedicamento()">Agregar nuevo medicamento</button>
+                        </div>
+                    </div>
 
-        <p><strong>Enfermedades</strong></p>
-            <div *ngIf="enfermedades.length == 0" class="alert alert-warning" role="alert">No posee enfermedades</div>
-            <ul>
-                <li *ngFor="let enfermedad of enfermedades">{{enfermedad.nombre}}</li>
-            </ul>
-
-        <p><strong>Observaciones de dientes</strong></p>
-            <div *ngIf="dientes.length == 0" class="alert alert-warning" role="alert">No posee observaciones de dientes</div>
-            <span *ngFor="let diente of dientes">
-                <ul><li>Diente {{diente.diente}}
-                    <ul>
-                        <li>Seccion: {{diente.seccion}}</li>
-                        <li>Observación: {{diente.observacion}}</li>
-                    </ul></li></ul>
-            </span>
-
+            <p><strong>Enfermedades</strong></p>
+                    <div class="row">
+                        <span *ngFor="let num of numeroEnfermedades; let i = index">
+                            <div class="form-group">
+                            <div class="col-md-6">
+                                <select class="form-control" [(ngModel)]="enfermedades[i]" id="hora">
+                                    <option value="-1">Enfermedades</option>
+                                    <option *ngFor="let data of enfermedadData; let i = index" value="{{data.id}}" >{{data.nombre}}</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Detalles" [(ngModel)]="enfermedadObservacion[i]">
+                            </div>
+                            </div>
+                        </span>
+                        <div class="form-group">
+                            <button class="btn btn-default" type="submit" (click)="agregarNuevaEnfermedad()">Agregar nueva enfermedad</button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-primary btn-lg btn-block" (click)="enviarForm()">Registrar nuevo paciente</button>
+                    </div>
+                    <div class="alert alert-danger" role="alert" *ngIf="errorValidacion != null">{{errorValidacion}}</div>
+            </form>
+        </div>
     </div>
-    <div class="col-md-6">
-        <h1>Consultas <small>(Solo del doctor)</small></h1>
-        <div *ngIf="consultasPorOdontologo.length == 0" class="alert alert-warning" role="alert">No posee consultas con el doctor</div>
-        <ul>
-            <span *ngFor="let consulta of consultasPorOdontologo; let i=index">
-                <h3>Consulta {{i+1}}</h3>
-                <li><strong>Observaciones:</strong> {{consulta.observaciones}}</li>
-                <li><strong>Fecha de consulta:</strong> {{consulta.fecha}}</li>
-                <li><strong>Odontologo:</strong> {{consulta.odontologo}}
-                <li *ngIf="consulta.id_tratamiento != null"><strong>Tratamiento</strong><ul>
-                    <li><strong>Nombre:</strong>{{consulta.nombre}}</li>
-                    <li><strong>Detalles</strong>{{consulta.detalles}}</li>
-                    <li><strong>Costo</strong>{{consulta.costo}}</li>
-                </ul></li>
-            </span>
-        </ul>
-        <h1>Consultas <small>(Todos los doctores)</small></h1>
-        <div *ngIf="consultas.length == 0" class="alert alert-warning" role="alert">No ha tenido consultas el paciente</div>
-        <ul>
-            <span *ngFor="let consulta of consultas; let i=index">
-                <h3>Consulta {{i+1}}</h3>
-                <li><strong>Observaciones:</strong> {{consulta.observaciones}}</li>
-                <li><strong>Fecha de consulta:</strong> {{consulta.fecha}}</li>
-                <li><strong>Odontologo:</strong> {{consulta.odontologo}}
-                <li *ngIf="consulta.id_tratamiento != null"><strong>Tratamiento</strong><ul>
-                    <li><strong>Nombre:</strong>{{consulta.nombre}}</li>
-                    <li><strong>Detalles</strong>{{consulta.detalles}}</li>
-                    <li><strong>Costo</strong>{{consulta.costo}}</li>
-                </ul></li>
-            </span>
-        </ul>
-    </div>
-</div>
+    </span>
+    
+    
 </div>

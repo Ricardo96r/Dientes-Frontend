@@ -30,7 +30,7 @@ export class HistorialComponent {
 
     getHistorial() {
         this.api.getHistorial(this.routeParams.get('idPaciente')).subscribe(
-            historial => this.historial = historial[0],
+            historial => this.historial = historial,
             error => console.error(error)
         )
     }
@@ -72,7 +72,10 @@ export class HistorialComponent {
     
     getPaciente() {
         this.api.getPaciente(this.routeParams.get('idPaciente')).subscribe(
-            paciente => this.paciente = paciente[0],
+            paciente => { 
+                this.paciente = paciente[0];
+                console.log(this.paciente);
+                 },
             error => console.error(error)
         )
     }
