@@ -10,12 +10,6 @@
 <div class="row">
     <div class="col-md-3"></div>
     <div class="col-md-6">
-        <form>
-            <div class="form-group">
-                <label for="paciente">Nombre del paciente</label>
-                <input type="text" class="form-control" id="paciente" placeholder="Nombre del paciente">
-            </div>
-        </form>
         <div class="list-group">
             <button type="button" class="list-group-item" *ngFor="let paciente of pacientes" (click)="irConsultasPaciente(paciente.id)">{{paciente.nombre}}</button>
         </div>

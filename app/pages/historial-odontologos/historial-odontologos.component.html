@@ -10,12 +10,6 @@
 <div class="row">
     <div class="col-md-3"></div>
     <div class="col-md-6">
-        <form>
-            <div class="form-group">
-                <label for="odontologo">Nombre de odontologo</label>
-                <input type="text" class="form-control" id="odontologo" placeholder="Nombre del odontologo">
-            </div>
-        </form>
         <div class="list-group">
             <button type="button" class="list-group-item" *ngFor="let odontologo of odontologos" (click)="irHistorialOdontologo(odontologo.id)">{{odontologo.nombre}}</button>
         </div>
