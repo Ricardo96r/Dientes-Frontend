@@ -28,8 +28,8 @@ export class ConsultasPacienteComponent {
     /*
      *  Obtiene todos los odontologos
      */
-    irConsulta(idOdontologo:number, idPaciente:number) {
-        let link = ['Consulta', {idOdontologo: idOdontologo, idPaciente: idPaciente}];
+    irConsulta(idConsulta:any) {
+        let link = ['Consulta', {idConsulta: idConsulta}];
         this.router.navigate(link);
     }
 }

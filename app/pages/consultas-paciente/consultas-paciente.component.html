@@ -13,7 +13,7 @@
             <span *ngFor="let consulta of consultas; let i=index">
                 <div class="clearfix" *ngIf="(i % 4) == 0"></div>
                 <div class="col-md-3">
-                    <div class="well" (click)="irConsulta(consulta.id_odontologo, consulta.id_paciente)">
+                    <div class="well" (click)="irConsulta(consulta.id)">
                         <p><strong>Odontologo:</strong> {{consulta.odontologo}}</p>
                         <p><strong>Observaciones:</strong> {{consulta.observaciones}}</p>
                         <p><strong>Fecha:</strong> {{consulta.fecha}}<p>

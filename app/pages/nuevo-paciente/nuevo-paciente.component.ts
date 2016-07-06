@@ -380,37 +380,7 @@ export class NuevoPacienteComponent {
                     return false;
         }
         
-        for (let i = 0; i < this.numeroDientes.length - 1; i++) {
-            if (this.diente[i+1] == undefined) {
-                this.errorValidacion = "Existen errores en el campo de dientes";
-                return false;
-            }
-            if (this.dienteSeccion[i+1] == undefined) {
-                this.errorValidacion = "Existen errores en el campo de dientes";
-                return false;
-            }
-        }
-        
-        for (let i = 0; i < this.numeroAlergias.length - 1; i++) {
-            if (this.alergias[i+1] == undefined) {
-                this.errorValidacion = "Existen errores en el campo de alergias";
-                return false;
-            }
-        }
-        
-        for (let i = 0; i < this.numeroEnfermedades.length - 1; i++) {
-            if (this.enfermedades[i+1] == undefined) {
-                this.errorValidacion = "Existen errores en el campo de enfermedades";
-                return false;
-            }
-        }
-        
-        for (let i = 0; i < this.numeroAlergias.length - 1; i++) {
-            if (this.medicamentos[i+1] == undefined) {
-                this.errorValidacion = "Existen errores en el campo de alergias";
-                return false;
-            }
-        }
+    
         
         return true
     }

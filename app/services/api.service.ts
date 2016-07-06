@@ -201,8 +201,8 @@ export class ApiService {
      *
      *  return json
      */
-    getConsulta(idOdontologo:any, idPaciente:any) {
-        return this.getHttp("consulta/odontologo/" + idOdontologo + "/paciente/" + idPaciente);
+    getConsulta(idConsulta:any) {
+        return this.getHttp("consulta/" + idConsulta);
     }
     
     /*
@@ -311,5 +311,14 @@ export class ApiService {
      */
     postMedicamento(body:any) {
         return this.postHttp("anexarMedicamento", body);
+    }
+    
+    /*
+     *  Crea un nuevo usuario
+     *
+     *  return json
+     */
+    postFacturar(body:any) {
+        return this.postHttp("facturar", body);
     }
 }

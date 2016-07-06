@@ -35,7 +35,7 @@ import {FacturaComponent} from '../pages/factura/factura.component';
     { path: '/nuevo/paciente', name: 'NuevoPaciente', component: NuevoPacienteComponent },
     { path: '/consulta/pacientes', name: 'ConsultaPacientes', component: ConsultaPacientesComponent },
     { path: '/consulta/pacientes/:idPaciente', name: 'ConsultasPaciente', component: ConsultasPacienteComponent },
-    { path: '/consulta/odontologo/:idOdontologo/paciente/:idPaciente', name: 'Consulta', component: ConsultaComponent },
+    { path: '/consulta/:idConsulta', name: 'Consulta', component: ConsultaComponent },
     { path: '/factura/:idConsulta', name: 'Factura', component: FacturaComponent },
 ])
 
