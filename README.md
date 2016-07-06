@@ -1,6 +1,7 @@
 # Dientes frontend
 - Se usó angular 2 rc 2 typescript
 - Fácil instalación (abajo)
+- Preview de la aplicación (fotos): https://github.com/Ricardo96r/Dientes-Frontend/tree/master/preview
 - Esta parte del proyecto esta relacionado con su API: https://github.com/Ricardo96r/Dientes-Backend
 
 # Angular 2
